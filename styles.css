@@ -1,3 +1,11 @@
+* {
+  border: .1em solid peachpuff;
+}
+
+img {
+  width: 7%;
+}
+
 /* font-family: 'Quicksand', sans-serif;
 COLORS
 light-yellow - #f7e4bf;
