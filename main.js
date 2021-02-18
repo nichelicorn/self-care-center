@@ -42,7 +42,8 @@ var mantras = [
 
 // 1a) write a function that will generate a random index number
 function getRandomIndex(array) {
-  
+  var index = Math.floor(Math.random() * array.length);
+  return index;
 }
 
 //  b) write a function that will pull a value from the appropriate array, based on the random index generated
