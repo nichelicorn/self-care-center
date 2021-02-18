@@ -2,6 +2,7 @@
 var affirRadio = document.querySelector('#affirmation');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
 var icon = document.querySelector('#icon');
+var mantraRadio = document.querySelector('#mantra');
 
 // ⤵ message arrays
 var affirmations = [
