@@ -1,7 +1,7 @@
 // ⤵ query selectors
 
 
-// ⤵ data model
+// ⤵ message arrays
 var affirmations = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -33,7 +33,6 @@ var mantras = [
   "Onward and upward.",
   "I am the sky, the rest is weather.",
 ]
-
 
 // ⤵ event listeners
 
