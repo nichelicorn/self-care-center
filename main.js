@@ -1,4 +1,5 @@
 // ⤵ query selectors
+var affirRadio = document.querySelector('#affirmation');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
 var icon = document.querySelector('#icon');
 
