@@ -9,4 +9,12 @@
 
 // 1a) write a function that will generate a random index number
 //  b) write a function that will pull a value from the appropriate array, based on the random index generated
-//  c) write a function that will replace the icon with an innerText 
+// --- should the generate random function call the message function with the index argument passed in? yes, I like that idea
+
+// 2a) write a function that will hide the mediation icon
+//  b) write a function that will unhide the message display element
+// --- can this be one function? hide/unhide in the same function and call when the button is clicked
+// --- may need an `event.preventDefault(event)` to clear the action when the button is clicked again?
+
+// 3a) write a function that will replace the icon with an innerText
+// --- target the container for the text and replace with an innerText
