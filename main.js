@@ -41,6 +41,10 @@ var mantras = [
 
 
 // 1a) write a function that will generate a random index number
+function getRandomIndex(array) {
+  
+}
+
 //  b) write a function that will pull a value from the appropriate array, based on the random index generated
 // --- should the generate random function call the message function with the index argument passed in? yes, I like that idea
 
