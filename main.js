@@ -1,6 +1,6 @@
 // ⤵ query selectors
-var btnReceiveMsg = document.querySelector('.btn-receive-msg');
-var icon = document.querySelector('img');
+var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
+var icon = document.querySelector('#icon');
 
 // ⤵ message arrays
 var affirmations = [
@@ -36,24 +36,25 @@ var mantras = [
 ]
 
 // ⤵ event listeners
-
+btnReceiveMsg.addEventListener('click', hideIcon);
 
 // ⤵ functions
-
 function getRandomIndex(array) {
   var index = Math.floor(Math.random() * array.length);
 }
 
-function displayMessage() {
-  icon.classList.add('.hidden');
+function hideIcon() {
+  icon.classList.add('hidden'); //this didn't work - is this targeting the wrong thing? icon is targeting the <img> holding the icon; not adding the hidden class to the icon `div`
+  // okay...it works if I call the function hideIcon in the console - the problem is with the button click
+  console.log('hideIcon is firing on the btnReceiveMsg click'); //msg appears and then immediately disappers in the console?
 }
 
 // 2a) write a function that will hide the mediation icon
-//  b) write a function that will unhide the message display element
 // --- can this be one function? hide/unhide in the same function and call when the button is clicked
 // --- may need an `event.preventDefault(event)` to clear the action when the button is clicked again?
 // need an event listener that will target the  `Receive Message` button and listen for a click
 // when the click occurs, run the function to hide the icon
+// will I want to call the function to create a random message within the displayMessage() function? or should I name this function to hideIcon? That's probably a better idea...
 
 
 // Iteration 1: Minimum Viable Product (MVP) - Add Random Affirmation and Mantra feature
@@ -65,7 +66,8 @@ function displayMessage() {
 //  2) the meditation icon will disappear from view
 //  3) in its place, the random message will be displayed to the user
 
-
+// was part of 2), but feels like it should be a separate function? - should this be part of the function that generates the innerText?
+//  b) write a function that will unhide the message display element
 
 // 3a) write a function that will replace the icon with an innerText
 //  b) write a function that will pull a value from the appropriate array, based on the random index generated
