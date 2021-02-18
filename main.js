@@ -1,5 +1,6 @@
 // ⤵ query selectors
-
+var btnReceiveMsg = document.querySelector('.btn-receive-msg');
+var icon = document.querySelector('img');
 
 // ⤵ message arrays
 var affirmations = [
@@ -39,18 +40,20 @@ var mantras = [
 
 // ⤵ functions
 
-
-// 1a) write a function that will generate a random index number
 function getRandomIndex(array) {
   var index = Math.floor(Math.random() * array.length);
-  return index;
 }
 
-//  b) write a function that will pull a value from the appropriate array, based on the random index generated
-// --- should the generate random function call the message function with the index argument passed in? yes, I like that idea
+function displayMessage() {
+  icon.classList.add('.hidden');
+}
 
-
-
+// 2a) write a function that will hide the mediation icon
+//  b) write a function that will unhide the message display element
+// --- can this be one function? hide/unhide in the same function and call when the button is clicked
+// --- may need an `event.preventDefault(event)` to clear the action when the button is clicked again?
+// need an event listener that will target the  `Receive Message` button and listen for a click
+// when the click occurs, run the function to hide the icon
 
 
 // Iteration 1: Minimum Viable Product (MVP) - Add Random Affirmation and Mantra feature
@@ -58,15 +61,13 @@ function getRandomIndex(array) {
 // When the message appears, the mediation icon disappears from the message area
 
 // goal : when a radio button is selected and the `Receive Message` button is clicked, several things will happen:
-//  1) a random message will be generated based on the user input
+//  1) √ a random index will be generated that will be used to choose a value from the chosen array
 //  2) the meditation icon will disappear from view
 //  3) in its place, the random message will be displayed to the user
 
 
-// 2a) write a function that will hide the mediation icon
-//  b) write a function that will unhide the message display element
-// --- can this be one function? hide/unhide in the same function and call when the button is clicked
-// --- may need an `event.preventDefault(event)` to clear the action when the button is clicked again?
 
 // 3a) write a function that will replace the icon with an innerText
+//  b) write a function that will pull a value from the appropriate array, based on the random index generated
+// should this be combined with step 3? I think I might be combining things backwards - I want to generate an innerText that will call the getRandomIndex function to generate the value displayed
 // --- target the container for the text and replace with an innerText
