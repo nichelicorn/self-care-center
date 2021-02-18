@@ -1,9 +1,10 @@
 * {
   border: .1em solid peachpuff;
+  margin: 15px;
 }
 
 .hidden {
-  display: none!important;
+  display: none;
 }
 
 img {

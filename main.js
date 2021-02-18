@@ -1,8 +1,9 @@
 // ⤵ query selectors
-var affirRadio = document.querySelector('#affirmation');
-var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
-var icon = document.querySelector('#icon');
-var mantraRadio = document.querySelector('#mantra');
+var affirRadio = document.querySelector('#affirmation'); //dbl checked - this is targeting the affirmation radio button
+var btnReceiveMsg = document.querySelector('#btnReceiveMsg'); //dbl checked - this is targeting the receive message button
+var icon = document.querySelector('#iconSection'); //dbl checked - this is targeting the icon section (want to remove that whole section when displayed?)
+var mantraRadio = document.querySelector('#mantra'); //dbl checked - this is targeting the mantra radio button
+var userMessage = document.querySelector('#userMessage');
 
 // ⤵ message arrays
 var affirmations = [
@@ -38,11 +39,19 @@ var mantras = [
 ]
 
 // ⤵ event listeners
-btnReceiveMsg.addEventListener('click', hideIcon);
+// btnReceiveMsg.addEventListener('click', hideIcon);
 
 // ⤵ functions
 function getRandomIndex(array) {
-  var index = Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length);
+}
+
+function getMessage() {
+  if (affirRadio.checked) {
+    userMessage.innerText = mantras[getRandomIndex(mantras)];
+  } else if (mantraRadio.checked) {
+    userMessage.innerText = affirmations[getRandomIndex(affirmations)];
+  }
 }
 
 function hideIcon() {
@@ -50,6 +59,17 @@ function hideIcon() {
   // okay...it works if I call the function hideIcon in the console - the problem is with the button click
   console.log('hideIcon is firing on the btnReceiveMsg click'); //msg appears and then immediately disappers in the console?
 }
+
+// i've hid a roadblock at hideIcon, but I am going to keep moving forward - I wonder if there is something about the order that isn't working
+// PSEUDOCODE AGAIN! WHAT'S HAPPENING WHERE I AM AND WHERE DO I NEED TO GO?
+// RIGHT NOW, I KNOW THAT WHEN I CLICK THE BUTTON, I WANT THESE THINGS TO HAPPEN:
+//  1) ONE OF THE RADIO BUTTONS HAS TO BE CHECKED FOR THE BUTTON CLICK TO DISPLAY A MESSAGE (I THINK THIS MIGHT BE WHY hideIcon ISN'T DOING ANYTHING RIGHT NOW)
+//  2) √ THE MEDITATION ICON SHOULD BE HIDDEN (hideIcon)
+//  3) A RANDOM MESSAGE WILL BE GENERATED (USING THE INDEX CREATED BY CALLING getRandomIndex)
+//  4) THIS MESSAGE WILL BE DISPLAYED WHERE THE HIDDEN ICON ONCE WAS
+
+
+
 
 // 2a) write a function that will hide the mediation icon
 // --- can this be one function? hide/unhide in the same function and call when the button is clicked
