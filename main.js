@@ -3,6 +3,7 @@ var affirRadio = document.querySelector('#affirmation'); //dbl checked - this is
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg'); //dbl checked - this is targeting the receive message button
 var icon = document.querySelector('#iconSection'); //dbl checked - this is targeting the icon section (want to remove that whole section when displayed?)
 var mantraRadio = document.querySelector('#mantra'); //dbl checked - this is targeting the mantra radio button
+var messageBox = document.querySelector('#messageDisplaySection');
 var userMessage = document.querySelector('#userMessage');
 
 // ⤵ message arrays
@@ -39,11 +40,17 @@ var mantras = [
 ]
 
 // ⤵ event listeners
-// btnReceiveMsg.addEventListener('click', hideIcon);
+btnReceiveMsg.addEventListener('click', displayMessage);
 
 // ⤵ functions
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
+}
+
+function displayMessage() {
+  getMessage();
+  hideIcon();
+  showMessage();
 }
 
 function getMessage() {
@@ -51,14 +58,22 @@ function getMessage() {
     userMessage.innerText = mantras[getRandomIndex(mantras)];
   } else if (mantraRadio.checked) {
     userMessage.innerText = affirmations[getRandomIndex(affirmations)];
+  // } else {
+  //   alert("You haven't made a selection!");
   }
 }
 
 function hideIcon() {
-  icon.classList.add('hidden'); //this didn't work - is this targeting the wrong thing? icon is targeting the <img> holding the icon; not adding the hidden class to the icon `div`
-  // okay...it works if I call the function hideIcon in the console - the problem is with the button click
+  icon.classList.add('hidden');
   console.log('hideIcon is firing on the btnReceiveMsg click'); //msg appears and then immediately disappers in the console?
 }
+
+function showMessage() {
+  messageBox.classList.remove('hidden');
+}
+
+// what the heck??? This is all working, seemingly, but when I click the button, the functions in displayMessage will only temporarily fire? the random message is appearing, and the icon is disappearing, but only for a split second
+
 
 // i've hid a roadblock at hideIcon, but I am going to keep moving forward - I wonder if there is something about the order that isn't working
 // PSEUDOCODE AGAIN! WHAT'S HAPPENING WHERE I AM AND WHERE DO I NEED TO GO?
