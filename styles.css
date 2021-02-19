@@ -1,4 +1,5 @@
 * {
+  font-family: 'Quicksand', sans-serif;
   border: .1em solid peachpuff;
   margin: 15px;
 }
@@ -11,7 +12,7 @@ img {
   width: 7%;
 }
 
-/* font-family: 'Quicksand', sans-serif;
+/*
 COLORS
 light-yellow - #f7e4bf;
 light-blue - #78a7c6;
@@ -19,3 +20,8 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+
+
+/* Iteration 0: Build Out Comp */
+/* Images are below */
+/* An assets directory is provided in the repo, and colors and fonts are provided in the CSS file. */
