@@ -43,10 +43,6 @@ var mantras = [
 btnReceiveMsg.addEventListener('click', displayMessage);
 
 // ⤵ functions
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
-
 function displayMessage() {
   getMessage();
   hideIcon();
@@ -59,8 +55,12 @@ function getMessage() {
   } else if (mantraRadio.checked) {
     userMessage.innerText = affirmations[getRandomIndex(affirmations)];
   // } else {
-  //   alert("You haven't made a selection!");
+  //   alert("please make a selection to proceed");
   }
+}
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
 }
 
 function hideIcon() {
@@ -71,42 +71,3 @@ function hideIcon() {
 function showMessage() {
   messageBox.classList.remove('hidden');
 }
-
-// what the heck??? This is all working, seemingly, but when I click the button, the functions in displayMessage will only temporarily fire? the random message is appearing, and the icon is disappearing, but only for a split second
-
-
-// i've hid a roadblock at hideIcon, but I am going to keep moving forward - I wonder if there is something about the order that isn't working
-// PSEUDOCODE AGAIN! WHAT'S HAPPENING WHERE I AM AND WHERE DO I NEED TO GO?
-// RIGHT NOW, I KNOW THAT WHEN I CLICK THE BUTTON, I WANT THESE THINGS TO HAPPEN:
-//  1) ONE OF THE RADIO BUTTONS HAS TO BE CHECKED FOR THE BUTTON CLICK TO DISPLAY A MESSAGE (I THINK THIS MIGHT BE WHY hideIcon ISN'T DOING ANYTHING RIGHT NOW)
-//  2) √ THE MEDITATION ICON SHOULD BE HIDDEN (hideIcon)
-//  3) A RANDOM MESSAGE WILL BE GENERATED (USING THE INDEX CREATED BY CALLING getRandomIndex)
-//  4) THIS MESSAGE WILL BE DISPLAYED WHERE THE HIDDEN ICON ONCE WAS
-
-
-
-
-// 2a) write a function that will hide the mediation icon
-// --- can this be one function? hide/unhide in the same function and call when the button is clicked
-// --- may need an `event.preventDefault(event)` to clear the action when the button is clicked again?
-// need an event listener that will target the  `Receive Message` button and listen for a click
-// when the click occurs, run the function to hide the icon
-// will I want to call the function to create a random message within the displayMessage() function? or should I name this function to hideIcon? That's probably a better idea...
-
-
-// Iteration 1: Minimum Viable Product (MVP) - Add Random Affirmation and Mantra feature
-// When a user selects a message option and then clicks the “Receive Message” button, the user sees a random message from the list of possible messages for that category
-// When the message appears, the mediation icon disappears from the message area
-
-// goal : when a radio button is selected and the `Receive Message` button is clicked, several things will happen:
-//  1) √ a random index will be generated that will be used to choose a value from the chosen array
-//  2) the meditation icon will disappear from view
-//  3) in its place, the random message will be displayed to the user
-
-// was part of 2), but feels like it should be a separate function? - should this be part of the function that generates the innerText?
-//  b) write a function that will unhide the message display element
-
-// 3a) write a function that will replace the icon with an innerText
-//  b) write a function that will pull a value from the appropriate array, based on the random index generated
-// should this be combined with step 3? I think I might be combining things backwards - I want to generate an innerText that will call the getRandomIndex function to generate the value displayed
-// --- target the container for the text and replace with an innerText
