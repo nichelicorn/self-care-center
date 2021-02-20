@@ -7,6 +7,7 @@ var home = document.querySelector('#homeWrapper');
 var icon = document.querySelector('#iconSection');
 var mantraRadio = document.querySelector('#mantra');
 var messageBox = document.querySelector('#messageDisplaySection');
+var savedMessagesSection = document.querySelector('#savedMessagesSection');
 
 // ⤵ message arrays
 var affirmations = [
@@ -106,16 +107,21 @@ function saveMessage() {
 //   togglePink();
 // }
 
+function showHearts() {
+
+}
+
 function showMessage() {
   messageBox.classList.remove('hidden');
 }
+
 
 //  💖User can favorite a message 💖
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
 //  1)  when the button is clicked, the view will change from the home page to the saved-messages section
 //  √ 1a) target the view favorites button
-//   1b) write a function that will hide the home page
-//  1c) write a function that will show the hidden saved messages page
+//  √ 1b) write a function that will hide the home page
+//   1c) write a function that will show the hidden saved messages page
 // 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
 //  2)  functions to hide home/show saved will be called on the btnVisitFavs click
 //  2a) style the divs that will hold the message cards
