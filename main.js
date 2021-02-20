@@ -71,6 +71,7 @@ function hideIcon() {
 }
 
 function saveMessage() {
+  btnHeartsMini.classList.toggle('.pink-hearts');
   if (affirRadio.checked && !savedAffirmations.includes(userMessage.innerText)) {
     savedAffirmations.push(userMessage.innerText);
   } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
@@ -84,14 +85,6 @@ function showMessage() {
 
 //  💖User can favorite a message 💖
 
-// 🧠 When the “Favorite” button is clicked, that message should be added to a new list of favorite messages.
-//  1) if the heart button is clicked, the message displayed will be added to an array of saved mantras/Affirmations
-//  √ a) need to create variables to hold the saved messages - should be an empty array
-//  b) need a function to push the value of the message into the array
-//  b1) target the heart button
-//  b2) target the message
-//  b3) write a function that will push the targeted message into the correct array
-//  b4) will probably need to reference the value of the checked radio button somehow?
 
 
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
@@ -109,3 +102,12 @@ function showMessage() {
 // √ 🐁 1) button click should alert the browser to show the favorite button at the same time that it hides the icon and get/shows the message - this is included in the hidden message-display-section
 // √ 1a)  need a function to show the favorite buttons
 // √ 3) need to add styling to the favorite buttons
+
+// 🧠 When the “Favorite” button is clicked, that message should be added to a new list of favorite messages.
+//  1) if the heart button is clicked, the message displayed will be added to an array of saved mantras/Affirmations
+//  √ a) need to create variables to hold the saved messages - should be an empty array
+//  √ b) need a function to push the value of the message into the array
+//  √ b1) target the heart button
+//  √ b2) target the message
+//  √ b3) write a function that will push the targeted message into the correct array
+//  √ b4) will probably need to reference the value of the checked radio button somehow?
