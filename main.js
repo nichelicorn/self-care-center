@@ -43,7 +43,10 @@ var savedAffirmations = [];
 var savedMantras = [];
 
 // ⤵ event listeners
-btnHeartsMini.addEventListener('click', saveAndToggle); //switch this to call function saveAndToggle - want to save message and toggle to pink at the same time -- will it work?? let's find out... 🕵️‍♀️...it will still add the message to the array, but the button still isn't turning pink 😕
+btnHeartsMini.addEventListener('click', saveMessage); //switch this to call function saveAndToggle - want to save message and toggle to pink at the same time -- will it work?? let's find out... 🕵️‍♀️...it will still add the message to the array, but the button still isn't turning pink 😕
+// maybe this should still only run the saveMessage function, and within the saveMessage could call togglePink
+// togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
+// I still don't think this will necessarily correct the issue of the color not appearing
 btnReceiveMsg.addEventListener('click', displayMessage);
 
 // ⤵ functions
@@ -78,16 +81,24 @@ function saveMessage() {
   } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
     savedMantras.push(userMessage.innerText);
   }
+
+  // togglePink();
 }
 
-function togglePink() {
-  btnHeartsMini.classList.toggle('.pink-hearts');
-}
+// function togglePink() {
+//   // (mantras.innerText is in the array)
+//   if (savedMantras.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.add('.pink-hearts');
+//   }
+//   if (savedAffirmations.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.add('.pink-hearts');
+//   }
+// }
 
-function saveAndToggle() {
-  saveMessage();
-  togglePink();
-}
+// function saveAndToggle() {
+//   saveMessage();
+//   togglePink();
+// }
 
 function showMessage() {
   messageBox.classList.remove('hidden');
