@@ -42,6 +42,7 @@ var savedAffirmations = [];
 var savedMantras = [];
 
 // ⤵ event listeners
+btnHeartsMini.addEventListener('click', saveMessage);
 btnReceiveMsg.addEventListener('click', displayMessage);
 
 // ⤵ functions
