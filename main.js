@@ -21,7 +21,7 @@ var affirmations = [
   "Every day I am getting healthier and stronger.",
   "I honor my body by trusting the signals that it sends me.",
   "I manifest perfect health by making smart choices.",
-]
+];
 var mantras = [
   "Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.",
   "Don’t let yesterday take up too much of today.",
@@ -37,7 +37,9 @@ var mantras = [
   "The only constant is change.",
   "Onward and upward.",
   "I am the sky, the rest is weather.",
-]
+];
+var savedAffirmations = [];
+var savedMantras = [];
 
 // ⤵ event listeners
 btnReceiveMsg.addEventListener('click', displayMessage);
@@ -72,18 +74,23 @@ function showMessage() {
 }
 
 //  💖User can favorite a message 💖
-// 🧠 When a message appears, it should appear with a “Favorite” button.
-// √💗2) need to make the favorite buttons
-// √ these should be visible below the message when the button is clicked
-// √ should they be in their own div? probably best for styling? not sure if this makes any difference
-// √ 🐁 1) button click should alert the browser to show the favorite button at the same time that it hides the icon and get/shows the message - this is included in the hidden message-display-section
-// 1a)  need a function to show the favorite buttons
-// 3) need to add styling to the favorite buttons
 
 // 🧠 When the “Favorite” button is clicked, that message should be added to a new list of favorite messages.
+//  1) if the heart button is clicked, the message displayed will be added to an array of saved mantras/Affirmations
+
+
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
 // 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
 // 🧠 Users should be able to navigate back to the main page by clicking a button.
 // 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
 // 🧠 As you add these new elements to the page, be sure to match the style of existing elements.
 // 🧠 NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature
+
+
+// 🧠 When a message appears, it should appear with a “Favorite” button.
+// √💗2) need to make the favorite buttons
+// √ these should be visible below the message when the button is clicked
+// √ should they be in their own div? probably best for styling? not sure if this makes any difference
+// √ 🐁 1) button click should alert the browser to show the favorite button at the same time that it hides the icon and get/shows the message - this is included in the hidden message-display-section
+// √ 1a)  need a function to show the favorite buttons
+// √ 3) need to add styling to the favorite buttons
