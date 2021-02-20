@@ -78,7 +78,6 @@ ul {
   justify-content: space-evenly;
 }
 
-
 .btn-receive-msg {
   width: 11em;
   height: 1.7em;
@@ -93,7 +92,6 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* align-items: center; */
   margin-top: 6.2em;
   background-color: #ffffff;
   width: 54em;
@@ -113,6 +111,28 @@ ul {
   text-align: center;
   font-size: 1.6em;
   padding: 1em;
+  height: 2em;
+}
+
+.fav-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn-hearts {
+  width: 11em;
+  height: 1.7em;
+  color: #ffffff;
+  font-size: 1.1em;
+  background-color: #134d71;
+  border-radius: .4em;
+  border: none;
+  margin: 0 .5em 0 .5em;
+}
+
+.mini {
+  width: 2em;
 }
 
 /* .bonus-rainbow {

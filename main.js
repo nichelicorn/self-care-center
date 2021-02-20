@@ -1,8 +1,8 @@
 // ⤵ query selectors
-var affirRadio = document.querySelector('#affirmation'); //dbl checked - this is targeting the affirmation radio button
-var btnReceiveMsg = document.querySelector('#btnReceiveMsg'); //dbl checked - this is targeting the receive message button
-var icon = document.querySelector('#iconSection'); //dbl checked - this is targeting the icon section (want to remove that whole section when displayed?)
-var mantraRadio = document.querySelector('#mantra'); //dbl checked - this is targeting the mantra radio button
+var affirRadio = document.querySelector('#affirmation');
+var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
+var icon = document.querySelector('#iconSection');
+var mantraRadio = document.querySelector('#mantra');
 var messageBox = document.querySelector('#messageDisplaySection');
 var userMessage = document.querySelector('#userMessage');
 
@@ -70,3 +70,20 @@ function hideIcon() {
 function showMessage() {
   messageBox.classList.remove('hidden');
 }
+
+//  💖User can favorite a message 💖
+// 🧠 When a message appears, it should appear with a “Favorite” button.
+// √💗2) need to make the favorite buttons
+// √ these should be visible below the message when the button is clicked
+// √ should they be in their own div? probably best for styling? not sure if this makes any difference
+// √ 🐁 1) button click should alert the browser to show the favorite button at the same time that it hides the icon and get/shows the message - this is included in the hidden message-display-section
+// 1a)  need a function to show the favorite buttons
+// 3) need to add styling to the favorite buttons
+
+// 🧠 When the “Favorite” button is clicked, that message should be added to a new list of favorite messages.
+// 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
+// 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
+// 🧠 Users should be able to navigate back to the main page by clicking a button.
+// 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
+// 🧠 As you add these new elements to the page, be sure to match the style of existing elements.
+// 🧠 NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature
