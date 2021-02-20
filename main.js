@@ -3,6 +3,7 @@ var affirRadio = document.querySelector('#affirmation');
 var btnHeartsMini = document.querySelector('#btnHeartsMini');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
 var btnVisitHearts = document.querySelector('#btnVisitHearts');
+var home = document.querySelector('#homeWrapper');
 var icon = document.querySelector('#iconSection');
 var mantraRadio = document.querySelector('#mantra');
 var messageBox = document.querySelector('#messageDisplaySection');
@@ -74,6 +75,10 @@ function hideIcon() {
   icon.classList.add('hidden');
 }
 
+function hideHome() {
+
+}
+
 function saveMessage() {
   // btnHeartsMini.classList.toggle('.pink-hearts'); //this doesn't currently work - the class is added to the button (can verify in the console) but the color of the button isn't updatin; try putting this into its own function?
   if (affirRadio.checked && !savedAffirmations.includes(userMessage.innerText)) {
@@ -107,8 +112,8 @@ function showMessage() {
 //  💖User can favorite a message 💖
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
 //  1)  when the button is clicked, the view will change from the home page to the saved-messages section
-//   1a) target the view favorites button
-//  1b) write a function that will hide the home page
+//  √ 1a) target the view favorites button
+//   1b) write a function that will hide the home page
 //  1c) write a function that will show the hidden saved messages page
 // 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
 //  2)  functions to hide home/show saved will be called on the btnVisitFavs click

@@ -1,60 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
+
   <body>
+
     <header>
       <h1>✨ Self Care Center ✨</h1>
     </header>
+
     <main>
-      <section class="home">
-        <h2>Which type of message?</h2>
-        <div class="message-form">
-          <section class="form">
-            <ul>
-              <div class="radio">
-                <input type="radio" name="form" value="affirmation" id="affirmation">
-                <label><em>affirmation</em></label>
-              </div>
-              <div class="radio">
-                <input type="radio" name="form" value="mantra" id="mantra">
-                <label><em>mantra</em></label>
-              </div>
-            </ul>
-            <button class="btn-receive-msg" id="btnReceiveMsg">Receive Message</button>
+
+      <div class="home-wrapper" id="homeWrapper">
+        <section class="home" id="home">
+          <h2>Which type of message?</h2>
+          <div class="message-form">
+            <section class="form">
+              <ul>
+                <div class="radio">
+                  <input type="radio" name="form" value="affirmation" id="affirmation">
+                  <label><em>affirmation</em></label>
+                </div>
+                <div class="radio">
+                  <input type="radio" name="form" value="mantra" id="mantra">
+                  <label><em>mantra</em></label>
+                </div>
+              </ul>
+              <button class="btn-receive-msg" id="btnReceiveMsg">Receive Message</button>
+            </section>
+          </div>
+        </section>
+
+        <div class="message-box">
+
+          <section id="iconSection" class="icon-section hidden">
+            <div class="icon">
+              <img src="./assets/meditate.svg" alt="icon of meditating figure">
+            </div>
+          </section>
+
+          <section id="messageDisplaySection" class="message-display-section">
+            <div class="message-display">
+              <p id="userMessage">Auṃ maṇi padme hūṃ</p>
+            </div>
+            <div class="fav-buttons">
+              <button class="btn-hearts-mini" id="btnHeartsMini">❤</button>
+              <button class="btn-visit-hearts" id="btnVisitHearts">Visit Your Hearts</button>
+            </div>
           </section>
         </div>
-      </section>
-      <!-- <section class="saved-messages hidden">
-        <section class="saved-affirmations">
-          <div class="affirmations">
+      </div>
 
-          </div>
-        </section>
-        <section class="saved=mantras">
-          <div class="mantras">
+      <section class="saved-messages hidden">
+      <div class="saved-wrapper" id="savedWrapper">
+          <section class="saved-affirmations">
+            <div class="affirmations">
 
-          </div>
-        </section>
-      </section> -->
-      <div class="message-box">
-        <section id="iconSection" class="icon-section hidden">
-          <div class="icon">
-            <img src="./assets/meditate.svg" alt="icon of meditating figure">
-          </div>
-        </section>
-        <section id="messageDisplaySection" class="message-display-section">
-          <div class="message-display">
-            <p id="userMessage">Auṃ maṇi padme hūṃ</p>
-          </div>
-          <div class="fav-buttons">
-            <button class="btn-hearts-mini" id="btnHeartsMini">❤</button>
-            <button class="btn-visit-hearts" id="btnVisitHearts">Visit Your Hearts</button>
-          </div>
+            </div>
+          </section>
+          <section class="saved=mantras">
+            <div class="mantras">
+
+            </div>
+          </section>
         </section>
       </div>
+
     </main>
     <script type="text/javascript" src="main.js"></script>
   </body>
