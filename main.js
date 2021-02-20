@@ -71,9 +71,9 @@ function hideIcon() {
 }
 
 function saveMessage() {
-  if (affirRadio.checked) {
+  if (affirRadio.checked && !savedAffirmations.includes(userMessage.innerText)) {
     savedAffirmations.push(userMessage.innerText);
-  } else if (mantraRadio.checked) {
+  } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
     savedMantras.push(userMessage.innerText);
   }
 }
