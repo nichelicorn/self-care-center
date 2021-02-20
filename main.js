@@ -1,10 +1,10 @@
 // ⤵ query selectors
 var affirRadio = document.querySelector('#affirmation');
+var btnHeartsMini = document.querySelector('.btn-hearts-mini');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
 var icon = document.querySelector('#iconSection');
 var mantraRadio = document.querySelector('#mantra');
 var messageBox = document.querySelector('#messageDisplaySection');
-var userMessage = document.querySelector('#userMessage');
 
 // ⤵ message arrays
 var affirmations = [
@@ -69,6 +69,14 @@ function hideIcon() {
   icon.classList.add('hidden');
 }
 
+function saveMessage() {
+  if (affirRadio.checked) {
+    savedAffirmations.push(userMessage.innerText);
+  } else if (mantraRadio.checked) {
+    savedMantras.push(userMessage.innerText);
+  }
+}
+
 function showMessage() {
   messageBox.classList.remove('hidden');
 }
@@ -77,6 +85,12 @@ function showMessage() {
 
 // 🧠 When the “Favorite” button is clicked, that message should be added to a new list of favorite messages.
 //  1) if the heart button is clicked, the message displayed will be added to an array of saved mantras/Affirmations
+//  √ a) need to create variables to hold the saved messages - should be an empty array
+//  b) need a function to push the value of the message into the array
+//  b1) target the heart button
+//  b2) target the message
+//  b3) write a function that will push the targeted message into the correct array
+//  b4) will probably need to reference the value of the checked radio button somehow?
 
 
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page

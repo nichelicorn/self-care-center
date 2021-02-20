@@ -120,7 +120,8 @@ ul {
   justify-content: center;
 }
 
-.btn-hearts {
+.btn-hearts,
+.btn-hearts-mini {
   width: 11em;
   height: 1.7em;
   color: #ffffff;
@@ -131,7 +132,7 @@ ul {
   margin: 0 .5em 0 .5em;
 }
 
-.mini {
+.btn-hearts-mini {
   width: 2em;
 }
 
