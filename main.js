@@ -1,7 +1,8 @@
 // ⤵ query selectors
 var affirRadio = document.querySelector('#affirmation');
-var btnHeartsMini = document.querySelector('.btn-hearts-mini');
+var btnHeartsMini = document.querySelector('#btnHeartsMini');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
+var btnVisitHearts = document.querySelector('#btnVisitHearts');
 var icon = document.querySelector('#iconSection');
 var mantraRadio = document.querySelector('#mantra');
 var messageBox = document.querySelector('#messageDisplaySection');
@@ -42,7 +43,7 @@ var savedAffirmations = [];
 var savedMantras = [];
 
 // ⤵ event listeners
-btnHeartsMini.addEventListener('click', saveMessage);
+btnHeartsMini.addEventListener('click', saveAndToggle); //switch this to call function saveAndToggle - want to save message and toggle to pink at the same time -- will it work?? let's find out... 🕵️‍♀️...it will still add the message to the array, but the button still isn't turning pink 😕
 btnReceiveMsg.addEventListener('click', displayMessage);
 
 // ⤵ functions
@@ -71,7 +72,7 @@ function hideIcon() {
 }
 
 function saveMessage() {
-  btnHeartsMini.classList.toggle('.pink-hearts');
+  // btnHeartsMini.classList.toggle('.pink-hearts'); //this doesn't currently work - the class is added to the button (can verify in the console) but the color of the button isn't updatin; try putting this into its own function?
   if (affirRadio.checked && !savedAffirmations.includes(userMessage.innerText)) {
     savedAffirmations.push(userMessage.innerText);
   } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
@@ -79,16 +80,33 @@ function saveMessage() {
   }
 }
 
+function togglePink() {
+  btnHeartsMini.classList.toggle('.pink-hearts');
+}
+
+function saveAndToggle() {
+  saveMessage();
+  togglePink();
+}
+
 function showMessage() {
   messageBox.classList.remove('hidden');
 }
 
 //  💖User can favorite a message 💖
-
-
-
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
+//  1)  when the button is clicked, the view will change from the home page to the saved-messages section
+//   1a) target the view favorites button
+//  1b) write a function that will hide the home page
+//  1c) write a function that will show the hidden saved messages page
 // 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
+//  2)  functions to hide home/show saved will be called on the btnVisitFavs click
+//  2a) style the divs that will hold the message cards
+//  2b) create message cards using innerHTML
+//  2c) values for cards will be drawn from the saved whatevers array
+
+
+
 // 🧠 Users should be able to navigate back to the main page by clicking a button.
 // 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
 // 🧠 As you add these new elements to the page, be sure to match the style of existing elements.
