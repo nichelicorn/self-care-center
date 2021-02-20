@@ -1,18 +1,18 @@
-// ⤵ query selectors
-var affirRadio = document.querySelector('#affirmation');
+// ⤵ QUERY SELECTORS
+var affirRadio = document.querySelector('#affirRadio');
 var btnHeartsMini = document.querySelector('#btnHeartsMini');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
 var btnReturnHome = document.querySelector('#btnReturnHome');
 var btnVisitHearts = document.querySelector('#btnVisitHearts');
 var home = document.querySelector('#homeWrapper');
 var icon = document.querySelector('#iconSection');
-var mantraRadio = document.querySelector('#mantra');
+var mantraRadio = document.querySelector('#mantraRadio');
 var messageBox = document.querySelector('#messageDisplaySection');
-var savedAffirGallery = document.querySelector('#savedAffGallery');
+var savedAffirGallery = document.querySelector('#savedAffirGallery');
 var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
-var savedMessagesSection = document.querySelector('#savedMessagesSection');
+var savedMessagesSection = document.querySelector('#savedWrapper');
 
-// ⤵ message arrays
+// ⤵ MESSAGE ARRAYS
 var affirmations = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -47,7 +47,7 @@ var mantras = [
 var savedAffirmations = [];
 var savedMantras = [];
 
-// ⤵ event listeners
+// ⤵ EVENT LISTENERS
 btnHeartsMini.addEventListener('click', saveMessage); //switch this to call function saveAndToggle - want to save message and toggle to pink at the same time -- will it work?? let's find out... 🕵️‍♀️...it will still add the message to the array, but the button still isn't turning pink 😕
 // maybe this should still only run the saveMessage function, and within the saveMessage could call togglePink
 // togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
@@ -56,7 +56,7 @@ btnReceiveMsg.addEventListener('click', displayMessage);
 // btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
 
-// ⤵ functions
+// ⤵ FUNCTIONS
 function displayMessage() {
   getMessage();
   hideIcon();
@@ -85,6 +85,28 @@ function hideHome() {
   home.classList.add('hidden');
 }
 
+function makeAffirCards() {
+  savedAffirGallery.innerHTML = "";
+  for (var i = 0; i < savedAffirmations.length; i++) {
+    savedAffirGallery.innerHTML +=
+    `
+    <div class="card">
+      <p>${savedAffirmations[i]}</p>
+    `
+  }
+}
+
+function makeMantraCards() {
+  savedMantrasGallery.innerHTML = "";
+  for (var i = 0; i < savedMantras.length; i++) {
+    savedMantrasGallery.innerHTML +=
+    `
+    <div class="card">
+      <p>${savedMantras[i]}</p>
+    `
+  }
+}
+
 function saveMessage() {
   // btnHeartsMini.classList.toggle('.pink-hearts'); //this doesn't currently work - the class is added to the button (can verify in the console) but the color of the button isn't updatin; try putting this into its own function?
   if (affirRadio.checked && !savedAffirmations.includes(userMessage.innerText)) {
@@ -94,6 +116,13 @@ function saveMessage() {
   }
 
   // togglePink();
+}
+
+function showHearts() {
+  hideHome();
+  showSaved();
+  makeAffirCards();
+  makeMantraCards();
 }
 
 function showHome() {
@@ -110,10 +139,9 @@ function showMessage() {
   messageBox.classList.remove('hidden');
 }
 
-function showHearts() {
-  hideHome();
-  showSaved();
-}
+
+
+
 
 // function togglePink() {
 //   // (mantras.innerText is in the array)
@@ -130,7 +158,6 @@ function showHearts() {
 //   togglePink();
 // }
 
-
 //  💖User can favorite a message 💖
 // 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
 //  1)  when the button is clicked, the view will change from the home page to the saved-messages section
@@ -140,8 +167,9 @@ function showHearts() {
 // 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
 //  √ 2)  functions to hide home/show saved will be called on the btnVisitHearts click
 //  √ 2a) style the divs that will hold the message cards
-//  2b) create message cards using innerHTML
-//  2c) values for cards will be drawn from the saved whatevers array
+//  √ 2b) create message cards using innerHTML
+//  √ 2c) values for cards will be drawn from the saved whatevers array
+//   2d) cards need styling!!
 
 
 

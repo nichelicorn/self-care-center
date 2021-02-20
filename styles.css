@@ -155,6 +155,10 @@ ul {
 }
 
 .gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   width: 44%;
   height: 25em;
@@ -164,6 +168,20 @@ ul {
 
 .btn-return-home {
   margin: 2em;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  width: 95%;
+  height: 2.8em;
+  background-color: #ffffff;
+  color: #134d71;
+  border-radius: .6em;
+  text-align: center;
+  font-size: 1em;
 }
 
 .bonus-rainbow {
