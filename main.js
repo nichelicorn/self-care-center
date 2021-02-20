@@ -76,7 +76,7 @@ function hideIcon() {
 }
 
 function hideHome() {
-
+  home.classList.add('hidden');
 }
 
 function saveMessage() {
