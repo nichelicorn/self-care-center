@@ -1,17 +1,127 @@
 * {
-  border: .1em solid peachpuff;
-  margin: 15px;
+  font-family: 'Quicksand', sans-serif;
+  /* border: .1em solid peachpuff; */
+  margin: 0;
+}
+
+html,
+body {
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  margin: 0;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hidden {
   display: none;
 }
 
-img {
-  width: 7%;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* font-family: 'Quicksand', sans-serif;
+h1 {
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5em;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+  padding: 2.1em 2.1em .5em 2.1em;
+}
+
+.message-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  height: 7em;
+  width: 37em;
+  border-radius: .6em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* width: 25em; */
+  width: 28em;
+  height: 6em;
+}
+
+.radio {
+  /* border: .1em solid peachpuff; */
+}
+
+ul {
+  /* width: 22em; */
+  width: 25em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+.radio {
+  display: flex;
+  width: 8em;
+  justify-content: space-evenly;
+}
+
+
+.btn-receive-msg {
+  width: 11em;
+  height: 1.7em;
+  color: #ffffff;
+  font-size: 1.1em;
+  background-color: #134d71;
+  border-radius: .4em;
+  border: none;
+}
+
+.message-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 6.2em;
+  background-color: #ffffff;
+  width: 54em;
+  height: 10em;
+  border-radius: .6em;
+}
+
+.icon,
+.message-display {
+  display: flex;
+  justify-content: center;
+  height: 5.1em;
+}
+
+.message-display {
+  align-items: center;
+  text-align: center;
+  font-size: 1.6em;
+  padding: 1em;
+}
+
+/* .bonus-rainbow {
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+} */
+
+/*
 COLORS
 light-yellow - #f7e4bf;
 light-blue - #78a7c6;
@@ -19,3 +129,8 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+
+
+/* Iteration 0: Build Out Comp */
+/* Images are below */
+/* An assets directory is provided in the repo, and colors and fonts are provided in the CSS file. */

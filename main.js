@@ -65,7 +65,6 @@ function getRandomIndex(array) {
 
 function hideIcon() {
   icon.classList.add('hidden');
-  console.log('hideIcon is firing on the btnReceiveMsg click'); //msg appears and then immediately disappers in the console?
 }
 
 function showMessage() {
