@@ -1,3 +1,4 @@
+/* ⤵ APPLY TO ALL STYLES */
 * {
   font-family: 'Quicksand', sans-serif;
   /* border: .1em solid peachpuff; */
@@ -21,12 +22,14 @@ main {
   display: none;
 }
 
+/* ⤵ HOME PAGE STYLES */
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* ⤵ HEADERS */
 h1 {
   color: #ffffff;
   text-align: center;
@@ -39,6 +42,7 @@ h2 {
   padding: 2.1em 2.1em .5em 2.1em;
 }
 
+/* ⤵ INPUT STYLES */
 .message-form {
   display: flex;
   justify-content: center;
@@ -58,10 +62,6 @@ h2 {
   /* width: 25em; */
   width: 28em;
   height: 6em;
-}
-
-.radio {
-  /* border: .1em solid peachpuff; */
 }
 
 ul {
@@ -88,6 +88,7 @@ ul {
   border: none;
 }
 
+/* ⤵ MESSAGE BOX STYLES */
 .message-box {
   display: flex;
   justify-content: center;
@@ -121,7 +122,8 @@ ul {
 }
 
 .btn-visit-hearts,
-.btn-hearts-mini {
+.btn-hearts-mini,
+.btn-return-home {
   width: 11em;
   height: 1.7em;
   color: #ffffff;
@@ -140,11 +142,35 @@ ul {
   color: #FE77DB;
 }
 
-/* .bonus-rainbow {
+/* ⤵ SAVED MESSAGE STYLES */
+.saved-wrapper {
+  width: 95%;
+}
+
+.saved-messages-section {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.gallery {
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  width: 44%;
+  height: 25em;
+  margin: 0 1em 0 1em;
+  border-radius: .6em;
+}
+
+.btn-return-home {
+  margin: 2em;
+}
+
+.bonus-rainbow {
   background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
   linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
   linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-} */
+}
 
 /*
 COLORS

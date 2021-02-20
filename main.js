@@ -2,11 +2,14 @@
 var affirRadio = document.querySelector('#affirmation');
 var btnHeartsMini = document.querySelector('#btnHeartsMini');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
+var btnReturnHome = document.querySelector('#btnReturnHome');
 var btnVisitHearts = document.querySelector('#btnVisitHearts');
 var home = document.querySelector('#homeWrapper');
 var icon = document.querySelector('#iconSection');
 var mantraRadio = document.querySelector('#mantra');
 var messageBox = document.querySelector('#messageDisplaySection');
+var savedAffirGallery = document.querySelector('#savedAffGallery');
+var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
 var savedMessagesSection = document.querySelector('#savedMessagesSection');
 
 // ⤵ message arrays
@@ -50,6 +53,7 @@ btnHeartsMini.addEventListener('click', saveMessage); //switch this to call func
 // togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
 // I still don't think this will necessarily correct the issue of the color not appearing
 btnReceiveMsg.addEventListener('click', displayMessage);
+// btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
 
 // ⤵ functions
@@ -92,7 +96,13 @@ function saveMessage() {
   // togglePink();
 }
 
+function showHome() {
+  home.classList.remove('hidden');
+  savedWrapper.classList.add('hidden');
+}
+
 function showSaved() {
+  event.preventDefault(event);
   savedMessagesSection.classList.remove('hidden');
 }
 
@@ -126,10 +136,10 @@ function showHearts() {
 //  1)  when the button is clicked, the view will change from the home page to the saved-messages section
 //  √ 1a) target the view favorites button
 //  √ 1b) write a function that will hide the home page
-//   1c) write a function that will show the hidden saved messages page
+//  √ 1c) write a function that will show the hidden saved messages page
 // 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
-//  2)  functions to hide home/show saved will be called on the btnVisitFavs click
-//  2a) style the divs that will hold the message cards
+//  √ 2)  functions to hide home/show saved will be called on the btnVisitHearts click
+//  √ 2a) style the divs that will hold the message cards
 //  2b) create message cards using innerHTML
 //  2c) values for cards will be drawn from the saved whatevers array
 

@@ -14,7 +14,8 @@
 
     <main>
 
-      <div class="home-wrapper" id="homeWrapper">
+      <div class="home-wrapper hidden" id="homeWrapper">
+
         <section class="home" id="home">
           <h2>Which type of message?</h2>
           <div class="message-form">
@@ -35,7 +36,6 @@
         </section>
 
         <div class="message-box">
-
           <section id="iconSection" class="icon-section hidden">
             <div class="icon">
               <img src="./assets/meditate.svg" alt="icon of meditating figure">
@@ -51,22 +51,26 @@
               <button class="btn-visit-hearts" id="btnVisitHearts">Visit Your Hearts</button>
             </div>
           </section>
+
         </div>
       </div>
 
-      <section class="saved-messages-section hidden" id="savedMessagesSection">
       <div class="saved-wrapper" id="savedWrapper">
-          <section class="saved-affirmations">
+        <section class="saved-messages-section" id="savedMessagesSection">
+          <section class="saved-affirmations gallery" id="savedAffirGallery">
             <div class="affirmations">
 
             </div>
           </section>
-          <section class="saved=mantras">
+          <section class="saved-mantras gallery" id="savedMantrasGallery">
             <div class="mantras">
 
             </div>
           </section>
         </section>
+        <div class="fav-buttons">
+          <button class="btn-return-home" id="btnReturnHome">Return Home</button>
+        </div>
       </div>
 
     </main>
