@@ -49,6 +49,7 @@ btnHeartsMini.addEventListener('click', saveMessage); //switch this to call func
 // togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
 // I still don't think this will necessarily correct the issue of the color not appearing
 btnReceiveMsg.addEventListener('click', displayMessage);
+btnVisitHearts.addEventListener('click', hideHome);
 
 // ⤵ functions
 function displayMessage() {
