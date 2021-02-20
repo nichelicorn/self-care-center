@@ -50,7 +50,7 @@ btnHeartsMini.addEventListener('click', saveMessage); //switch this to call func
 // togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
 // I still don't think this will necessarily correct the issue of the color not appearing
 btnReceiveMsg.addEventListener('click', displayMessage);
-btnVisitHearts.addEventListener('click', hideHome);
+btnVisitHearts.addEventListener('click', showHearts);
 
 // ⤵ functions
 function displayMessage() {
@@ -92,6 +92,19 @@ function saveMessage() {
   // togglePink();
 }
 
+function showSaved() {
+  savedMessagesSection.classList.remove('hidden');
+}
+
+function showMessage() {
+  messageBox.classList.remove('hidden');
+}
+
+function showHearts() {
+  hideHome();
+  showSaved();
+}
+
 // function togglePink() {
 //   // (mantras.innerText is in the array)
 //   if (savedMantras.includes(userMessage.innerText)) {
@@ -106,14 +119,6 @@ function saveMessage() {
 //   saveMessage();
 //   togglePink();
 // }
-
-function showHearts() {
-
-}
-
-function showMessage() {
-  messageBox.classList.remove('hidden');
-}
 
 
 //  💖User can favorite a message 💖
