@@ -12,11 +12,14 @@ var savedAffirGallery = document.querySelector('#savedAffirGallery');
 var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
 var savedMessagesSection = document.querySelector('#savedWrapper');
 
-// ⤵ MESSAGE CLASS
-class Message {
-  message = userMessage.innerText;
-  id = Date.now();
-}
+// // ⤵ MESSAGE CLASS
+// class Message {
+//  constructor(message,) {
+//   message = userMessage.innerText;
+//   id = Date.now();
+//   isFavorite = false// if true, btnHeartsMini===pink
+//  }
+// }
 
 // ⤵ MESSAGE ARRAYS
 var affirmations = [
@@ -54,7 +57,7 @@ var savedAffirmations = [];
 var savedMantras = [];
 
 // ⤵ EVENT LISTENERS
-btnHeartsMini.addEventListener('click', saveMessage); color not appearing
+btnHeartsMini.addEventListener('click', saveMessage);
 btnReceiveMsg.addEventListener('click', displayMessage);
 btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
@@ -62,17 +65,29 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 
 // ⤵ FUNCTIONS
 function deleteMessage() {
-  var cardToDelete = event.target.closest('.card');
-  // console.log('cardToDelete:', cardToDelete);
+  var cardToDelete = event.target.closest('.card'); // this is the card closest to the click
+  console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
   // console.log('id:', cardToDelete.id);
-  // console.log('class:', cardToDelete.classList);
+  // console.log('class:', cardToDelete.classList); // returns the classList of the card closest to the click
   var list = document.querySelectorAll('.card');
-  // console.log(list); //logs a NodeList with i number of elements
+  console.log(list); //logs a NodeList with i number of elements
+  console.log('list.length:', list.length);
   for (var i = 0; i < list.length; i++) {
     // console.log("list.length:", list.length); // logs the length of the list
-    console.log("i:", i); // logs the index number
+    console.log("i:", i); // logs the index number of the NodeList - this may not actually be useful in indicating the index to delete, as indicated in the function commented out below; Hmm, this doesn't seem to be useful at all. Looking into the class that is returned
   }
+
+
+  // if (card.classList.contains('mantra-card')) {
+    // savedMantras.splice(i, 1);
+  // } else if (card.classList.contains('affir-card')) {
+  // savedAffirmations.splice(i, 1);
+// }
 }
+// if classList.contains(this kind of card affir-card or mantra-card) {
+// delete i (the index returned in the for loop) from the array that corresponds to the card type
+// }
+
 
 // WHAT ARE YOU TRYING TO DO?
 // the index can be used to indicate which item to delete (splice(i, 1))
@@ -151,7 +166,7 @@ function saveMessage() {
     savedMantras.push(userMessage.innerText);
   }
 
-  togglePink();
+  // togglePink();
 }
 
 function showHearts() {
@@ -184,19 +199,20 @@ function showMessage() {
 
 
 
-function togglePink() {
-  // (mantras.innerText is in the array)
-  if (savedMantras.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.add('pink-hearts');
-  } else if (!savedMantras.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.remove('pink-hearts');
-  }
-  if (savedAffirmations.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.add('pink-hearts');
-  } else if (!savedAffirmations.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.remove('pink-hearts');
-  }
-}
+// function togglePink() {
+//   // (mantras.innerText is in the array)
+//   if (savedMantras.includes(userMessage.innerText)) {
+//     console.log('pinkHeart=true:', savedMantras.includes(userMessage.innerText));
+//     btnHeartsMini.classList.add('pink-hearts');
+//   } else if (!savedMantras.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.remove('pink-hearts');
+//   }
+//   if (savedAffirmations.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.add('pink-hearts');
+//   } else if (!savedAffirmations.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.remove('pink-hearts');
+//   }
+// }
 
 // function saveAndToggle() {
 //   saveMessage();
