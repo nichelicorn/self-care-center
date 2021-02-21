@@ -12,6 +12,12 @@ var savedAffirGallery = document.querySelector('#savedAffirGallery');
 var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
 var savedMessagesSection = document.querySelector('#savedWrapper');
 
+// ⤵ MESSAGE CLASS
+class Message {
+  message = userMessage.innerText;
+  id = Date.now();
+}
+
 // ⤵ MESSAGE ARRAYS
 var affirmations = [
   "I forgive myself and set myself free.",
@@ -59,13 +65,14 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 
 // ⤵ FUNCTIONS
 function deleteMessage() {
-var toDelete = event.target.classList.closest('btn-delete');
-  // if (event.target.classList.contains('btn-delete')) {
-    // savedMantras.pop(); // this is the wrong method - deletes the last item from the array, not the card that was clicked
-    // savedAffirmations.pop();
-    makeAffirCards();
-    makeMantraCards();
-  }
+  console.log('Hi! This is getting to the first line of deleteMessage.');
+  // console.log('id:', event.target.id); // returns id: with nothing after the semi; id is now appearing on the cards, but the console.log still isn't working; what is event.target without looking into the id?
+  // console.log('target:', event.target); // this is targeting just the button
+  console.log('card?:', event.target.closest('.card')); // this returns the div containing the card
+  // var toDelete = event.target.closest('.btn-delete');
+  // console.log('toDelete:', toDelete)
+  makeAffirCards();
+  makeMantraCards();
 }
 
 function displayMessage() {
@@ -99,7 +106,7 @@ function makeAffirCards() {
   for (var i = 0; i < savedAffirmations.length; i++) {
     savedAffirGallery.innerHTML +=
     `
-    <div class="affir-card">
+    <div class="affir-card card" id="affir${[i]}">
       <p class="msg-p">${savedAffirmations[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
@@ -112,7 +119,7 @@ function makeMantraCards() {
   for (var i = 0; i < savedMantras.length; i++) {
     savedMantrasGallery.innerHTML +=
     `
-    <div class="mantra-card">
+    <div class="mantra-card card" id="mantra${[i]}">
       <p class="msg-p">${savedMantras[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
@@ -178,7 +185,7 @@ function showMessage() {
 //  √ 1)  add a delete button to the cards
 //  2)  when the delete button is clicked, two things should happen:
 //      1) the message should be deleted from the array
-//      2) the card should be deleted from the view
+//      2) the card should be removed from the view
 
 
 
