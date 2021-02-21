@@ -66,17 +66,46 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 // ⤵ FUNCTIONS
 function deleteMessage() {
   console.log('Hi! This is getting to the first line of deleteMessage.');
-  // console.log('id:', event.target.id); // returns id: with nothing after the semi; id is now appearing on the cards, but the console.log still isn't working; what is event.target without looking into the id?
-  // console.log('target:', event.target); // this is targeting just the button
-  // console.log('card id?:', event.target.closest('card.id')); // returns null
-  // console.log('card?:', event.target.closest('.card')); // this returns the div containing the card
-  // var cardToDelete = event.target.closest('.card');
+  var cardToDelete = event.target.closest('.card');
   console.log('cardToDelete:', cardToDelete);
-  // need to target the specific id
   console.log('id?:', cardToDelete.id);
-  makeAffirCards();
-  makeMantraCards();
+  console.log('class?:', cardToDelete.classList);
+  var affir = document.querySelector('.affir-card');
+  console.log(affir);
+  var mantra = document.querySelector('.mantra-card');
+  // if (affir.includes('affir-card')) {
+  //   for (var i = 0; i < savedAffirmations.length; i++) {
+  //     if (cardToDelete.id === savedAffirmations[i].id) {
+  //       savedAffirmations.splice(i, 1);
+  //       makeAffirCards();
+  //     }
+  //   }
+  // } else if (cardToDelete.classList.includes('mantra-card')) {
+  //   for (var i = 0; i < savedMantras.length; i++) {
+  //     if (cardToDelete.id === savedMantras[i].id) {
+  //       savedMantras.splice(i, 1);
+  //       makeMantraCards();
+  //     }
+  //   }
+  // }
 }
+// console.log('includes?:', cardToDelete.includes('affir-card')); //cardToDelete.includes is not a function at HTMLDivElement.deleteMessage
+// console.log('id:', event.target.id); // returns id: with nothing after the semi; id is now appearing on the cards, but the console.log still isn't working; what is event.target without looking into the id?
+// console.log('target:', event.target); // this is targeting just the button
+// console.log('card id?:', event.target.closest('card.id')); // returns null
+// console.log('card?:', event.target.closest('.card')); // this returns the div containing the card
+// need to target the specific id
+// console.log('typdof id?:', typeof(cardToDelete.id));
+
+// function removePoster() {
+//   var clickedPoster = event.target.closest('.mini-poster');
+//   for (var i = 0; i < savedPosters.length; i++) {
+//     if (savedPosters[i].id === parseInt(clickedPoster.id)) {
+//       savedPosters.splice(i, 1);
+//       displayGrid();
+//     }
+//   }
+// }
 
 function displayMessage() {
   getMessage();
@@ -163,6 +192,10 @@ function showMessage() {
   messageBox.classList.remove('hidden');
 }
 
+// if this array is the type pass this through
+// else if this array is the type pass this through
+// the function needs to identify which array to pass the message into
+// this array should be the same array that corresponds to the radio button that is checked
 
 
 
