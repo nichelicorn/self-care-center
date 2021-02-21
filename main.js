@@ -72,7 +72,8 @@ function deleteMessage() {
   var list = document.querySelectorAll('.card');
   console.log(list); //logs a NodeList with i number of elements
   for (var i = 0; i < list.length; i++) {
-    console.log("item[i].length:", list[i].length); // logs undefined
+    console.log("list.length:", list.length); // logs the length of the list
+    console.log("i:", i); // logs the index number
   }
 }
 
