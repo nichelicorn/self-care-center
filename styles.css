@@ -157,7 +157,7 @@ ul {
 .gallery {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   width: 44%;
