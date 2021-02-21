@@ -54,10 +54,7 @@ var savedAffirmations = [];
 var savedMantras = [];
 
 // ⤵ EVENT LISTENERS
-btnHeartsMini.addEventListener('click', saveMessage); //switch this to call function saveAndToggle - want to save message and toggle to pink at the same time -- will it work?? let's find out... 🕵️‍♀️...it will still add the message to the array, but the button still isn't turning pink 😕
-// maybe this should still only run the saveMessage function, and within the saveMessage could call togglePink
-// togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
-// I still don't think this will necessarily correct the issue of the color not appearing
+btnHeartsMini.addEventListener('click', saveMessage); color not appearing
 btnReceiveMsg.addEventListener('click', displayMessage);
 btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
@@ -78,34 +75,9 @@ function deleteMessage() {
 }
 
 // WHAT ARE YOU TRYING TO DO?
-// THE ID HAS BEEN TARGETED
-// √  want to use the id to identify which card to delete
-// √ the id number includes the index
 // the index can be used to indicate which item to delete (splice(i, 1))
-// √ how to isolate the index from the id?
-// .contains will work, and so will .remove
+// ?? .contains will work, and so will .remove
 // if the card .contains the id, delete the card and rerun the makewhatever function
-// √ need to pull the index number out of the id
-// would indexOf work on the nodeList?
-
-// √ use querySelectorAll to grab all the elements with the same property
-// √ all the cards on the DOM are being held together (var list)
-// √ if I query select that area an array of all those DOM nodes should be returned
-// √ can then use that array to indicate which card to delete?
-
-
-// console.log('all with the card class?:', document.querySelectorAll('.card'));
-// console.log('Hi! This is getting to the first line of deleteMessage.');
-// console.log('includes?:', cardToDelete.includes('affir-card')); //cardToDelete.includes is not a function at HTMLDivElement.deleteMessage
-// console.log('id:', event.target.id); // returns id: with nothing after the semi; id is now appearing on the cards, but the console.log still isn't working; what is event.target without looking into the id?
-// console.log('target:', event.target); // this is targeting just the button
-// console.log('card id?:', event.target.closest('card.id')); // returns null
-// console.log('card?:', event.target.closest('.card')); // this returns the div containing the card
-// need to target the specific id
-// console.log('typdof id?:', typeof(cardToDelete.id));
-// console.log("all of classList type?:", document.querySelectorAll(cardToDelete.classList)) // logs an empty NodeList array
-// console.log('index0 of list:', list[0]); // logs the first item in the list!!
-// console.log('id of index0?:', list[0].id); // logs the id!! this includes the array type (affir or mantra) and the index
 
 // function removePoster() {
 //   var clickedPoster = event.target.closest('.mini-poster');
