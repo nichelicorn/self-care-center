@@ -12,11 +12,14 @@ var savedAffirGallery = document.querySelector('#savedAffirGallery');
 var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
 var savedMessagesSection = document.querySelector('#savedWrapper');
 
-// ⤵ MESSAGE CLASS
-class Message {
-  message = userMessage.innerText;
-  id = Date.now();
-}
+// // ⤵ MESSAGE CLASS
+// class Message {
+//  constructor(message,) {
+//   message = userMessage.innerText;
+//   id = Date.now();
+//   isFavorite = false// if true, btnHeartsMini===pink
+//  }
+// }
 
 // ⤵ MESSAGE ARRAYS
 var affirmations = [
@@ -54,7 +57,7 @@ var savedAffirmations = [];
 var savedMantras = [];
 
 // ⤵ EVENT LISTENERS
-btnHeartsMini.addEventListener('click', saveMessage); color not appearing
+btnHeartsMini.addEventListener('click', saveMessage);
 btnReceiveMsg.addEventListener('click', displayMessage);
 btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
@@ -62,19 +65,58 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 
 // ⤵ FUNCTIONS
 function deleteMessage() {
-  var cardToDelete = event.target.closest('.card');
-  // console.log('cardToDelete:', cardToDelete);
-  // console.log('id:', cardToDelete.id);
-  // console.log('class:', cardToDelete.classList);
-  var list = document.querySelectorAll('.card');
-  // console.log(list); //logs a NodeList with i number of elements
-  for (var i = 0; i < list.length; i++) {
-    // console.log("list.length:", list.length); // logs the length of the list
-    console.log("i:", i); // logs the index number
-  }
+  var cardToDelete = event.target.closest('.card'); // this is the card closest to the click
+  // console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
+  // console.log('id:', cardToDelete.id); // returns the id contained within the `innerHTML` that makes the card
+  var id = cardToDelete.id;
+  // console.log('sliced id:', id.slice(-1));
+  var index = id.slice(-1);
+  console.log('index:', index); // this returns the index needed to splice from the array (will need to create an if statement to account for more than 9 items in the array; if array.lenth >= 10, id.slice(-2))
+  var array = id.replace(index, "");
+  console.log('array:', array); // this logs the array name!!!!!
+
+
+
+  if (array === 'savedAffirmations') {
+    savedAffirmations.splice(index, 1);
+  } else if (array === 'savedMantras') {
+    savedMantras.splice(index, 1);
+  } // holy 💩...this is now deleting the clicked card from the correct array!!!!!!!!!!!!!!!!!
+
+  makeAffirCards();
+  makeMantraCards();
 }
 
+  // ✨ how do I extract the last character of the id? that is the index number that needs to be deleted from the array
+
+// if I change the id to match the array name, is it possible to separate the number from the name? then I could have an id savedMantras0, split savedMantras and 0 into their own variables, then plug them into a statement that would spice the number(0) from the  name (savedMantras)
+
+  // var list = [];
+  // var nodeList = list.push(document.querySelectorAll('.card'));
+  // console.log('list.push():', document.querySelectorAll('.card')) // returns the values of the NodeList and the index position within the list, as well as their descriptions
+  // does the NodeList contain the id? 🕵️‍♀️
+  // console.log('nodeList contains id?:', nodeList.contains(cardToDelete));
+  // ✨ the id is also in the NodeList, appears as `div#id.whatev-card.card,`
+  // need to push the values of the NodeList into an array to allow manipulation?
+  // console.log('list.length:', list.length);
+
+// figure out which item in the NodeList is being targeted on the click
+// where does this information appear?
+
+// find cardToDelete in the list and use that to update the DOM (?)
+
+  // if (card.classList.contains('mantra-card')) {
+    // savedMantras.splice(i, 1);
+  // } else if (card.classList.contains('affir-card')) {
+  // savedAffirmations.splice(i, 1);
+// }
+// }
+// if classList.contains(this kind of card affir-card or mantra-card) {
+// delete i (the index returned in the for loop) from the array that corresponds to the card type
+// }
+
 // WHAT ARE YOU TRYING TO DO?
+// the index is stated by referring the the id in the innerHTML - (cardToDelete.id)
 // the index can be used to indicate which item to delete (splice(i, 1))
 // ?? .contains will work, and so will .remove
 // if the card .contains the id, delete the card and rerun the makewhatever function
@@ -88,6 +130,11 @@ function deleteMessage() {
 //     }
 //   }
 // }
+
+// console.log('class:', cardToDelete.classList); // returns the classList of the card closest to the click
+// console.log('NodeList:', nodeList); //logs the length of the `list` array
+
+
 
 function displayMessage() {
   event.preventDefault(event);
@@ -122,7 +169,7 @@ function makeAffirCards() {
   for (var i = 0; i < savedAffirmations.length; i++) {
     savedAffirGallery.innerHTML +=
     `
-    <div class="affir-card card" id="affir${[i]}">
+    <div class="affir-card card" id="savedAffirmations${[i]}">
       <p class="msg-p">${savedAffirmations[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
@@ -135,7 +182,7 @@ function makeMantraCards() {
   for (var i = 0; i < savedMantras.length; i++) {
     savedMantrasGallery.innerHTML +=
     `
-    <div class="mantra-card card" id="mantra${[i]}">
+    <div class="mantra-card card" id="savedMantras${[i]}">
       <p class="msg-p">${savedMantras[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
@@ -150,8 +197,7 @@ function saveMessage() {
   } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
     savedMantras.push(userMessage.innerText);
   }
-
-  togglePink();
+  // togglePink();
 }
 
 function showHearts() {
@@ -184,19 +230,20 @@ function showMessage() {
 
 
 
-function togglePink() {
-  // (mantras.innerText is in the array)
-  if (savedMantras.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.add('pink-hearts');
-  } else if (!savedMantras.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.remove('pink-hearts');
-  }
-  if (savedAffirmations.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.add('pink-hearts');
-  } else if (!savedAffirmations.includes(userMessage.innerText)) {
-    btnHeartsMini.classList.remove('pink-hearts');
-  }
-}
+// function togglePink() {
+//   // (mantras.innerText is in the array)
+//   if (savedMantras.includes(userMessage.innerText)) {
+//     console.log('pinkHeart=true:', savedMantras.includes(userMessage.innerText));
+//     btnHeartsMini.classList.add('pink-hearts');
+//   } else if (!savedMantras.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.remove('pink-hearts');
+//   }
+//   if (savedAffirmations.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.add('pink-hearts');
+//   } else if (!savedAffirmations.includes(userMessage.innerText)) {
+//     btnHeartsMini.classList.remove('pink-hearts');
+//   }
+// }
 
 // function saveAndToggle() {
 //   saveMessage();
