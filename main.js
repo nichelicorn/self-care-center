@@ -59,9 +59,10 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 
 // ⤵ FUNCTIONS
 function deleteMessage() {
-  if (event.target.classList.contains('btn-delete')) {
-    savedMantras.pop();
-    savedAffirmations.pop();
+var toDelete = event.target.classList.closest('btn-delete');
+  // if (event.target.classList.contains('btn-delete')) {
+    // savedMantras.pop(); // this is the wrong method - deletes the last item from the array, not the card that was clicked
+    // savedAffirmations.pop();
     makeAffirCards();
     makeMantraCards();
   }
@@ -78,8 +79,6 @@ function getMessage() {
     userMessage.innerText = mantras[getRandomIndex(mantras)];
   } else if (mantraRadio.checked) {
     userMessage.innerText = affirmations[getRandomIndex(affirmations)];
-  // } else {
-  //   alert("please make a selection to proceed");
   }
 }
 
