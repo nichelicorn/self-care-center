@@ -66,32 +66,32 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 // ⤵ FUNCTIONS
 function deleteMessage() {
   var cardToDelete = event.target.closest('.card');
-  console.log('cardToDelete:', cardToDelete);
-  console.log('id:', cardToDelete.id);
-  console.log('class:', cardToDelete.classList);
+  // console.log('cardToDelete:', cardToDelete);
+  // console.log('id:', cardToDelete.id);
+  // console.log('class:', cardToDelete.classList);
   var list = document.querySelectorAll('.card');
-  console.log(list); //logs a NodeList with i number of elements
+  // console.log(list); //logs a NodeList with i number of elements
   for (var i = 0; i < list.length; i++) {
-    console.log("list.length:", list.length); // logs the length of the list
+    // console.log("list.length:", list.length); // logs the length of the list
     console.log("i:", i); // logs the index number
   }
 }
 
 // WHAT ARE YOU TRYING TO DO?
 // THE ID HAS BEEN TARGETED
-//  want to use the id to identify which card to delete
-// the id number includes the index
+// √  want to use the id to identify which card to delete
+// √ the id number includes the index
 // the index can be used to indicate which item to delete (splice(i, 1))
-// how to isolate the index from the id?
+// √ how to isolate the index from the id?
 // .contains will work, and so will .remove
 // if the card .contains the id, delete the card and rerun the makewhatever function
-// need to pull the index number out of the id
+// √ need to pull the index number out of the id
 // would indexOf work on the nodeList?
 
-// use querySelectorAll to grab all the elements with the same property
-// all the cards on the DOM are being held together
-// if I query select that area an array of all those DOM nodes should be returned
-// can then use that array to indicate which card to delete?
+// √ use querySelectorAll to grab all the elements with the same property
+// √ all the cards on the DOM are being held together (var list)
+// √ if I query select that area an array of all those DOM nodes should be returned
+// √ can then use that array to indicate which card to delete?
 
 
 // console.log('all with the card class?:', document.querySelectorAll('.card'));
