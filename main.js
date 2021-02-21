@@ -66,16 +66,23 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 // ⤵ FUNCTIONS
 function deleteMessage() {
   var cardToDelete = event.target.closest('.card'); // this is the card closest to the click
-  console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
-  console.log('id:', cardToDelete.id);
-  // console.log('class:', cardToDelete.classList); // returns the classList of the card closest to the click
-  var list = document.querySelectorAll('.card');
-  console.log(list); //logs a NodeList with i number of elements
+  // console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
+  console.log('id:', cardToDelete.id); // returns the id contained within the `innerHTML` that makes the card
+
+  
+}
+  // ✨ how do I extract the last character of the id? that is the index number that needs to be deleted from the array
+
+// if I change the id to match the array name, is it possible to separate the number from the name? then I could have an id savedMantras0, split savedMantras and 0 into their own variables, then plug them into a statement that would spice the number(0) from the  name (savedMantras)
+
+  // var list = [];
+  // var nodeList = list.push(document.querySelectorAll('.card'));
+  // console.log('list.push():', document.querySelectorAll('.card')) // returns the values of the NodeList and the index position within the list, as well as their descriptions
+  // does the NodeList contain the id? 🕵️‍♀️
+  // console.log('nodeList contains id?:', nodeList.contains(cardToDelete));
+  // ✨ the id is also in the NodeList, appears as `div#id.whatev-card.card,`
+  // need to push the values of the NodeList into an array to allow manipulation?
   // console.log('list.length:', list.length);
-  for (var i = 0; i < list.length; i++) {
-    // console.log("list.length:", list.length); // logs the length of the list
-    console.log("i:", i); // logs the index number of the NodeList - this may not actually be useful in indicating the index to delete, as indicated in the function commented out below; Hmm, this doesn't seem to be useful at all. Looking into the class that is returned
-  }
 
 // figure out which item in the NodeList is being targeted on the click
 // where does this information appear?
@@ -87,11 +94,10 @@ function deleteMessage() {
   // } else if (card.classList.contains('affir-card')) {
   // savedAffirmations.splice(i, 1);
 // }
-}
+// }
 // if classList.contains(this kind of card affir-card or mantra-card) {
 // delete i (the index returned in the for loop) from the array that corresponds to the card type
 // }
-
 
 // WHAT ARE YOU TRYING TO DO?
 // the index is stated by referring the the id in the innerHTML - (cardToDelete.id)
@@ -108,6 +114,11 @@ function deleteMessage() {
 //     }
 //   }
 // }
+
+// console.log('class:', cardToDelete.classList); // returns the classList of the card closest to the click
+// console.log('NodeList:', nodeList); //logs the length of the `list` array
+
+
 
 function displayMessage() {
   event.preventDefault(event);
@@ -142,7 +153,7 @@ function makeAffirCards() {
   for (var i = 0; i < savedAffirmations.length; i++) {
     savedAffirGallery.innerHTML +=
     `
-    <div class="affir-card card" id="affir${[i]}">
+    <div class="affir-card card" id="savedAffirmations${[i]}">
       <p class="msg-p">${savedAffirmations[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
@@ -155,7 +166,7 @@ function makeMantraCards() {
   for (var i = 0; i < savedMantras.length; i++) {
     savedMantrasGallery.innerHTML +=
     `
-    <div class="mantra-card card" id="mantra${[i]}">
+    <div class="mantra-card card" id="savedMantras${[i]}">
       <p class="msg-p">${savedMantras[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
