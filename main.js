@@ -68,9 +68,14 @@ function deleteMessage() {
   var cardToDelete = event.target.closest('.card'); // this is the card closest to the click
   // console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
   console.log('id:', cardToDelete.id); // returns the id contained within the `innerHTML` that makes the card
-
-  
+  var id = cardToDelete.id;
+  console.log('sliced id:', id.slice(-1));
+  var index = id.slice(-1);
+  console.log('index:', index); // this returns the index needed to splice from the array (will need to create an if statement to account for more than 9 items in the array; if array.lenth >= 10, id.slice(-2))
+  var array = id.replace(index, "");
+  console.log('array:', array); // this logs the array name!!!!!
 }
+
   // ✨ how do I extract the last character of the id? that is the index number that needs to be deleted from the array
 
 // if I change the id to match the array name, is it possible to separate the number from the name? then I could have an id savedMantras0, split savedMantras and 0 into their own variables, then plug them into a statement that would spice the number(0) from the  name (savedMantras)
