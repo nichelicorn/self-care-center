@@ -149,8 +149,14 @@ ul {
 
 .heart-header {
   text-align: center;
-  padding: 1.5em;
+  padding: 1.5em 0 .5em 0;
   color: #fe77db;
+}
+
+.saved-headers {
+  display: flex;
+  justify-content: space-around;
+  padding: .3em;
 }
 
 .saved-messages-section {
