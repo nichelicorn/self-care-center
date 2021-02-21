@@ -55,8 +55,18 @@ btnHeartsMini.addEventListener('click', saveMessage); //switch this to call func
 btnReceiveMsg.addEventListener('click', displayMessage);
 btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
+savedMessagesSection.addEventListener('click', deleteMessage);
 
 // ⤵ FUNCTIONS
+function deleteMessage() {
+  if (event.target.classList.contains('btn-delete')) {
+    savedMantras.pop();
+    savedAffirmations.pop();
+    makeAffirCards();
+    makeMantraCards();
+  }
+}
+
 function displayMessage() {
   getMessage();
   hideIcon();
@@ -165,16 +175,16 @@ function showMessage() {
 
 //  💖User can favorite a message 💖
 // IN PROCESS
+// 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
+//  √ 1)  add a delete button to the cards
+//  2)  when the delete button is clicked, two things should happen:
+//      1) the message should be deleted from the array
+//      2) the card should be deleted from the view
 
 
 
 
 // TO DO
-// 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
-//  1)  add a delete button to the cards
-//  2)  when the delete button is clicked, two things should happen:
-//      1) the message should be deleted from the array
-//      2) the card should be deleted from the view
 
 
 
