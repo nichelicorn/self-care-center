@@ -74,6 +74,14 @@ function deleteMessage() {
   console.log('index:', index); // this returns the index needed to splice from the array (will need to create an if statement to account for more than 9 items in the array; if array.lenth >= 10, id.slice(-2))
   var array = id.replace(index, "");
   console.log('array:', array); // this logs the array name!!!!!
+
+  if (array === 'savedAffirmations') {
+    savedAffirmations.splice(index, 1);
+  } else if (array === 'savedMantras') {
+    savedMantras.splice(index, 1);
+  } // holy 💩...this is now deleting the clicked card from the correct array!!!!!!!!!!!!!!!!!
+
+
 }
 
   // ✨ how do I extract the last character of the id? that is the index number that needs to be deleted from the array
