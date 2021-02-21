@@ -67,16 +67,20 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 function deleteMessage() {
   var cardToDelete = event.target.closest('.card'); // this is the card closest to the click
   console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
-  // console.log('id:', cardToDelete.id);
+  console.log('id:', cardToDelete.id);
   // console.log('class:', cardToDelete.classList); // returns the classList of the card closest to the click
   var list = document.querySelectorAll('.card');
   console.log(list); //logs a NodeList with i number of elements
-  console.log('list.length:', list.length);
+  // console.log('list.length:', list.length);
   for (var i = 0; i < list.length; i++) {
     // console.log("list.length:", list.length); // logs the length of the list
     console.log("i:", i); // logs the index number of the NodeList - this may not actually be useful in indicating the index to delete, as indicated in the function commented out below; Hmm, this doesn't seem to be useful at all. Looking into the class that is returned
   }
 
+// figure out which item in the NodeList is being targeted on the click
+// where does this information appear?
+
+// find cardToDelete in the list and use that to update the DOM (?)
 
   // if (card.classList.contains('mantra-card')) {
     // savedMantras.splice(i, 1);
@@ -90,6 +94,7 @@ function deleteMessage() {
 
 
 // WHAT ARE YOU TRYING TO DO?
+// the index is stated by referring the the id in the innerHTML - (cardToDelete.id)
 // the index can be used to indicate which item to delete (splice(i, 1))
 // ?? .contains will work, and so will .remove
 // if the card .contains the id, delete the card and rerun the makewhatever function
@@ -165,7 +170,6 @@ function saveMessage() {
   } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
     savedMantras.push(userMessage.innerText);
   }
-
   // togglePink();
 }
 
