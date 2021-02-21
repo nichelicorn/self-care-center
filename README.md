@@ -32,3 +32,5 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 
 - ✅ISSUE: cards are overflowing their container; SOLUTION: removed height on the .gallery, but now it just expands with the number of cards
 - ✨LOOK INTO INFINITE SCROLLING?✨
+
+- ISSUE: not really an issue, but tried refactoring CSS and it all went to shit! these things are particular, and I need more practice to get used to the way these rules interact with one another
