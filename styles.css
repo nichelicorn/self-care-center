@@ -147,6 +147,12 @@ ul {
   width: 95%;
 }
 
+.heart-header {
+  text-align: center;
+  padding: 1.5em;
+  color: #fe77db;
+}
+
 .saved-messages-section {
   display: flex;
   /* flex-direction: row; */
@@ -159,7 +165,8 @@ ul {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  background: linear-gradient(#fa77db, #FFAAE9, #f7e4bf);
+  /* background: linear-gradient(#134d71, #78a7c6, #f7e4bf); */
   width: 44%;
   /* height: 25em; */
   margin: 0 1em 0 1em;
