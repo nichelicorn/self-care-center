@@ -139,7 +139,7 @@ ul {
 }
 
 .pink-hearts {
-  color: #FE77DB;
+  color: #fe77db;
 }
 
 /* ⤵ SAVED MESSAGE STYLES */
@@ -170,9 +170,11 @@ ul {
   margin: 2em;
 }
 
-.card {
+.affir-card,
+.mantra-card {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
   margin: .5em 0 .5em 0;
   width: 95%;
@@ -180,8 +182,31 @@ ul {
   background-color: #ffffff;
   color: #134d71;
   border-radius: .6em;
-  text-align: center;
   font-size: 1em;
+}
+
+.affir-card > p,
+.mantra-card > p {
+  /* text-align: center; */
+  margin: 0 .5em 0 .5em;
+}
+
+/* .mantra-card > p {
+  text-align: right;
+  margin: 0 .5em 0 .5em;
+} */
+
+/* .msg-p {
+  text-align: right;
+  margin: 0 .5em 0 .5em;
+} */
+
+.btn-delete {
+  color: #ffffff;
+  /* background-color: #134d71; */
+  border-radius: 5em;
+  border: 1px solid #fe77db;
+  margin: 0 .5em 0 .5em;
 }
 
 .bonus-rainbow {

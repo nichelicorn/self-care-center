@@ -90,8 +90,10 @@ function makeAffirCards() {
   for (var i = 0; i < savedAffirmations.length; i++) {
     savedAffirGallery.innerHTML +=
     `
-    <div class="card">
-      <p>${savedAffirmations[i]}</p>
+    <div class="affir-card">
+      <p class="msg-p">${savedAffirmations[i]}</p>
+      <button class="btn-delete">✂️</button>
+    </div>
     `
   }
 }
@@ -101,8 +103,10 @@ function makeMantraCards() {
   for (var i = 0; i < savedMantras.length; i++) {
     savedMantrasGallery.innerHTML +=
     `
-    <div class="card">
-      <p>${savedMantras[i]}</p>
+    <div class="mantra-card">
+      <p class="msg-p">${savedMantras[i]}</p>
+      <button class="btn-delete">✂️</button>
+    </div>
     `
   }
 }
@@ -167,8 +171,18 @@ function showMessage() {
 
 // TO DO
 // 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
+//  1)  add a delete button to the cards
+//  2)  when the delete button is clicked, two things should happen:
+//      1) the message should be deleted from the array
+//      2) the card should be deleted from the view
+
+
+
+
 // 🧠 As you add these new elements to the page, be sure to match the style of existing elements.
 // 🧠 NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature
+
+
 
 // COMPLETED
 // 🧠 When a message appears, it should appear with a “Favorite” button.
