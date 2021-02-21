@@ -81,7 +81,8 @@ function deleteMessage() {
     savedMantras.splice(index, 1);
   } // holy 💩...this is now deleting the clicked card from the correct array!!!!!!!!!!!!!!!!!
 
-
+  makeAffirCards();
+  makeMantraCards();
 }
 
   // ✨ how do I extract the last character of the id? that is the index number that needs to be deleted from the array
