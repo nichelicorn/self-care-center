@@ -31,8 +31,8 @@ main {
 /* ⤵ HEADERS */
 h1,
 h2 {
-  color: #ffffff;
   text-align: center;
+  color: #ffffff;
 }
 
 h1 {
@@ -52,57 +52,48 @@ h2 {
 }
 
 .message-form {
-  /* display: flex; */
   justify-content: center;
-  /* flex-direction: column; */
-  /* align-items: center; */
   background-color: #ffffff;
-  height: 7em;
   width: 37em;
+  height: 7em;
   border-radius: .6em;
 }
 
 .form {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
   justify-content: space-around;
-  /* width: 25em; */
   width: 28em;
   height: 6em;
 }
 
-
 ul {
-  /* width: 22em; */
-  width: 25em;
   display: flex;
   justify-content: space-between;
+  width: 25em;
   font-size: 1.2em;
 }
 
 .radio {
   display: flex;
-  width: 8em;
   justify-content: space-evenly;
+  width: 8em;
 }
 
 .btn-receive-msg {
+  background-color: #134d71;
   width: 11em;
   height: 1.7em;
   color: #ffffff;
   font-size: 1.1em;
-  background-color: #134d71;
   border-radius: .4em;
   border: none;
 }
 
 /* ⤵ MESSAGE BOX STYLES */
 .message-box {
+  margin-top: 6.2em;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 6.2em;
   background-color: #ffffff;
   width: 54em;
   height: 10em;
@@ -170,20 +161,15 @@ ul {
 
 .saved-messages-section {
   display: flex;
-  /* flex-direction: row; */
   justify-content: center;
-  /* align-items: center; */
 }
 
 .gallery {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   background: linear-gradient(#fa77db, #FFAAE9, #f7e4bf);
-  /* background: linear-gradient(#134d71, #78a7c6, #f7e4bf); */
   width: 44%;
-  /* height: 25em; */
   margin: 0 1em 0 1em;
   border-radius: .6em;
 }
@@ -195,12 +181,11 @@ ul {
 .affir-card,
 .mantra-card {
   display: flex;
-  /* justify-content: center; */
   justify-content: space-between;
   align-items: center;
   margin: .5em 0 .5em 0;
   width: 95%;
-  height: 2.8em;
+  height: 3em;
   background-color: #ffffff;
   color: #134d71;
   border-radius: .6em;
@@ -209,26 +194,15 @@ ul {
 
 .affir-card > p,
 .mantra-card > p {
-  /* text-align: center; */
   margin: 0 .5em 0 .5em;
 }
 
-/* .mantra-card > p {
-  text-align: right;
-  margin: 0 .5em 0 .5em;
-} */
-
-/* .msg-p {
-  text-align: right;
-  margin: 0 .5em 0 .5em;
-} */
-
 .btn-delete {
+  margin: 0 .5em 0 .5em;
   color: #ffffff;
-  /* background-color: #134d71; */
+  background-color: #f7e4bf;
   border-radius: 5em;
   border: 1px solid #fe77db;
-  margin: 0 .5em 0 .5em;
 }
 
 .bonus-rainbow {
@@ -237,16 +211,45 @@ ul {
   linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
 }
 
-/*
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
-
-
-/* Iteration 0: Build Out Comp */
-/* Images are below */
-/* An assets directory is provided in the repo, and colors and fonts are provided in the CSS file. */
+/* button styles */
+/* .btn-receive-msg {
+  background-color: #134d71;
+  width: 11em;
+  height: 1.7em;
+  color: #ffffff;
+  font-size: 1.1em;
+  border-radius: .4em;
+  border: none;
+} */
+/* .fav-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} */
+/* .btn-visit-hearts,
+.btn-hearts-mini,
+.btn-return-home {
+  width: 11em;
+  height: 1.7em;
+  color: #ffffff;
+  font-size: 1.1em;
+  background-color: #134d71;
+  border-radius: .4em;
+  border: none;
+  margin: 0 .5em 0 .5em;
+} */
+/* .btn-hearts-mini {
+  width: 2em;
+} */
+/* .pink-hearts {
+  color: #fe77db;
+} */
+/* .btn-return-home {
+  margin: 2em;
+} */
+/* .btn-delete {
+  color: #ffffff;
+  border-radius: 5em;
+  border: 1px solid #fe77db;
+  margin: 0 .5em 0 .5em;
+} */
