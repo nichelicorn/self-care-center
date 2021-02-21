@@ -68,9 +68,12 @@ function deleteMessage() {
   console.log('Hi! This is getting to the first line of deleteMessage.');
   // console.log('id:', event.target.id); // returns id: with nothing after the semi; id is now appearing on the cards, but the console.log still isn't working; what is event.target without looking into the id?
   // console.log('target:', event.target); // this is targeting just the button
-  console.log('card?:', event.target.closest('.card')); // this returns the div containing the card
-  // var toDelete = event.target.closest('.btn-delete');
-  // console.log('toDelete:', toDelete)
+  // console.log('card id?:', event.target.closest('card.id')); // returns null
+  // console.log('card?:', event.target.closest('.card')); // this returns the div containing the card
+  // var cardToDelete = event.target.closest('.card');
+  console.log('cardToDelete:', cardToDelete);
+  // need to target the specific id
+  console.log('id?:', cardToDelete.id);
   makeAffirCards();
   makeMantraCards();
 }
