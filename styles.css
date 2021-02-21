@@ -161,7 +161,7 @@ ul {
   align-items: center;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   width: 44%;
-  height: 25em;
+  /* height: 25em; */
   margin: 0 1em 0 1em;
   border-radius: .6em;
 }
@@ -174,7 +174,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1em;
+  margin: .5em 0 .5em 0;
   width: 95%;
   height: 2.8em;
   background-color: #ffffff;

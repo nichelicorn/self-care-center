@@ -53,7 +53,7 @@ btnHeartsMini.addEventListener('click', saveMessage); //switch this to call func
 // togglePink might need to have an if (mantras.innerText is in the array), change the heart to pink
 // I still don't think this will necessarily correct the issue of the color not appearing
 btnReceiveMsg.addEventListener('click', displayMessage);
-// btnReturnHome.addEventListener('click', showHome);
+btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
 
 // ⤵ FUNCTIONS
@@ -126,6 +126,7 @@ function showHearts() {
 }
 
 function showHome() {
+  event.preventDefault(event);
   home.classList.remove('hidden');
   savedWrapper.classList.add('hidden');
 }
@@ -160,7 +161,6 @@ function showMessage() {
 
 //  💖User can favorite a message 💖
 // IN PROCESS
-// 🧠 Users should be able to navigate back to the main page by clicking a button.
 
 
 
@@ -197,3 +197,5 @@ function showMessage() {
 //  √ 2b) create message cards using innerHTML
 //  √ 2c) values for cards will be drawn from the saved whatevers array
 //  √ 2d) cards need styling!!
+// 🧠 Users should be able to navigate back to the main page by clicking a button.
+//  1)  when click return home button, the home view should reappear and the hearts should disappear
