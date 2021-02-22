@@ -44,7 +44,7 @@
 
 #### Project Reflection
 - Overall, I think this project went well. I was able to work independently through most of the challenges I encountered. I practiced a LOT of pseudocoding, which was useful. I could still DO MORE PSEUDOCODING! It's so helpful! And gets my thoughts out of my head.
-- I was not able to complete the Local Storage extension, which was my real end goal. It took me a lot longer than expected to target the necessary elements to delete the cards. I went down a few wrong paths, and these experiences helped me Understand how certain pieces of code function and interact with one another. I got to look a little more into string methods, which was interesting, and just generally got an idea that I'm only at the beginning of understanding JavaScript!
+- I was not able to complete the Local Storage extension, which was my real end goal. It took me a lot longer than expected to target the necessary elements to delete the cards. I went down a few wrong paths, and these experiences helped me understand how certain pieces of code function and interact with one another. I got to look a little more into string methods, which was interesting, and just generally got an idea that I'm only at the beginning of understanding JavaScript!
 
 ##### Wins
 - I was able to complete the challenge with minimal mentor intervention.
