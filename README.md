@@ -67,10 +67,10 @@
 - All messages interface
 
 #### Credits
-##### Co-Contributors
-- [Nichele D](https://github.com/nichelicorn)
+##### Contributor
+- [🌿 Nichele D](https://github.com/nichelicorn)
 ##### Mentors
-- [Rachael Thomas](https://github.com/rachael-t)
+- [⛷ Rachael Thomas](https://github.com/rachael-t)
 ##### Project Manager
 - [Turing Mod 1 Instructors](https://frontend.turing.io/lessons/)
 
