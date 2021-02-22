@@ -1,4 +1,4 @@
-// ⤵ QUERY SELECTORS
+// ⤵ QUERY SELECTORS 🕵️‍♀️
 var affirRadio = document.querySelector('#affirRadio');
 var btnHeartsMini = document.querySelector('#btnHeartsMini');
 var btnReceiveMsg = document.querySelector('#btnReceiveMsg');
@@ -12,7 +12,7 @@ var savedAffirGallery = document.querySelector('#savedAffirGallery');
 var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
 var savedMessagesSection = document.querySelector('#savedWrapper');
 
-// // ⤵ MESSAGE CLASS - may attempt a future refactore to include a class; it seems this would require refactoring `deleteMessage()` to target the id in the object rather than the id in the DOM
+// // ⤵ MESSAGE CLASS 🏗 - may attempt a future refactore to include a class; it seems this would require refactoring `deleteMessage()` to target the id in the object rather than the id in the DOM
 // class Message {
 //  constructor(message,) {
 //   message = userMessage.innerText;
@@ -21,7 +21,7 @@ var savedMessagesSection = document.querySelector('#savedWrapper');
 //  }
 // }
 
-// ⤵ MESSAGE ARRAYS
+// ⤵ MESSAGE ARRAYS 🕉
 var affirmations = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -56,14 +56,14 @@ var mantras = [
 var savedAffirmations = [];
 var savedMantras = [];
 
-// ⤵ EVENT LISTENERS
+// ⤵ EVENT LISTENERS 🌽
 btnHeartsMini.addEventListener('click', saveMessage);
 btnReceiveMsg.addEventListener('click', displayMessage);
 btnReturnHome.addEventListener('click', showHome);
 btnVisitHearts.addEventListener('click', showHearts);
 savedMessagesSection.addEventListener('click', deleteMessage);
 
-// ⤵ FUNCTIONS
+// ⤵ FUNCTIONS 🏋️‍♀️
 function deleteMessage() {
   var cardToDelete = event.target.closest('.card');
   var id = cardToDelete.id;
@@ -100,12 +100,12 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function hideIcon() {
-  icon.classList.add('hidden');
-}
-
 function hideHome() {
   home.classList.add('hidden');
+}
+
+function hideIcon() {
+  icon.classList.add('hidden');
 }
 
 function makeAffirCards() {
@@ -117,7 +117,7 @@ function makeAffirCards() {
       <p class="msg-p">${savedAffirmations[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
-    `
+    `;
   }
 }
 
@@ -130,12 +130,12 @@ function makeMantraCards() {
       <p class="msg-p">${savedMantras[i]}</p>
       <button class="btn-delete">✂️</button>
     </div>
-    `
+    `;
   }
 }
 
 function saveMessage() {
-  // btnHeartsMini.classList.toggle('.pink-hearts'); //this doesn't currently work - the class is added to the button (can verify in the console) but the color of the button isn't updatin; try putting this into its own function?
+  btnHeartsMini.classList.toggle('pink-hearts'); // this will toggle the heart pink when clicked, and off when the Receive Message button is clicked again
   if (affirRadio.checked && !savedAffirmations.includes(userMessage.innerText)) {
     savedAffirmations.push(userMessage.innerText);
   } else if (mantraRadio.checked && !savedMantras.includes(userMessage.innerText)) {
@@ -157,25 +157,17 @@ function showHome() {
   savedWrapper.classList.add('hidden');
 }
 
+function showMessage() {
+  messageBox.classList.remove('hidden');
+}
+
 function showSaved() {
   event.preventDefault(event);
   savedMessagesSection.classList.remove('hidden');
 }
 
-function showMessage() {
-  messageBox.classList.remove('hidden');
-}
-
-// if this array is the type pass this through
-// else if this array is the type pass this through
-// the function needs to identify which array to pass the message into
-// this array should be the same array that corresponds to the radio button that is checked
-
-
-
-
-// function togglePink() {
-//   // (mantras.innerText is in the array)
+// FUNCTIONS TO REVISIT IN THE FUTURE 🕰
+// function togglePink() { // this doesn't actually work...will change the heart pink but the logic is wrong; only changes to pink for `savedAffirmations`; doesn't recognize if the value is already in the array
 //   if (savedMantras.includes(userMessage.innerText)) {
 //     console.log('pinkHeart=true:', savedMantras.includes(userMessage.innerText));
 //     btnHeartsMini.classList.add('pink-hearts');
@@ -189,58 +181,7 @@ function showMessage() {
 //   }
 // }
 
-// function saveAndToggle() {
+// function saveAndToggle() { // may refactor in the future to use this function instead
 //   saveMessage();
 //   togglePink();
 // }
-
-//  💖User can favorite a message 💖
-// IN PROCESS
-// 🧠 Users should be able to remove a message from their list of favorites, by clicking a button.
-//  √ 1)  add a delete button to the cards
-//  2)  when the delete button is clicked, two things should happen:
-//      1) the message should be deleted from the array
-//      2) the card should be removed from the view
-
-
-
-
-// TO DO
-
-
-
-
-// 🧠 As you add these new elements to the page, be sure to match the style of existing elements.
-// 🧠 NOTE: None of this needs to persist on page refresh, unless you also complete the local storage feature
-
-
-
-// COMPLETED
-// 🧠 When a message appears, it should appear with a “Favorite” button.
-// √💗2) need to make the favorite buttons
-// √ these should be visible below the message when the button is clicked
-// √ should they be in their own div? probably best for styling? not sure if this makes any difference
-// √ 🐁 1) button click should alert the browser to show the favorite button at the same time that it hides the icon and get/shows the message - this is included in the hidden message-display-section
-// √ 1a)  need a function to show the favorite buttons
-// √ 3) need to add styling to the favorite buttons
-// 🧠 When the “Favorite” button is clicked, that message should be added to a new list of favorite messages.
-//  1) if the heart button is clicked, the message displayed will be added to an array of saved mantras/Affirmations
-//  √ a) need to create variables to hold the saved messages - should be an empty array
-//  √ b) need a function to push the value of the message into the array
-//  √ b1) target the heart button
-//  √ b2) target the message
-//  √ b3) write a function that will push the targeted message into the correct array
-//  √ b4) will probably need to reference the value of the checked radio button somehow?
-// 🧠 Users should be able to view their favorites by clicking a “View Favorites” button that exists somewhere on the page
-//  1)  when the button is clicked, the view will change from the home page to the saved-messages section
-//  √ 1a) target the view favorites button
-//  √ 1b) write a function that will hide the home page
-//  √ 1c) write a function that will show the hidden saved messages page
-// 🧠 When the “View Favorites” button is clicked, users should be taken to a new page that displays all of their favorite messages.
-//  √ 2)  functions to hide home/show saved will be called on the btnVisitHearts click
-//  √ 2a) style the divs that will hold the message cards
-//  √ 2b) create message cards using innerHTML
-//  √ 2c) values for cards will be drawn from the saved whatevers array
-//  √ 2d) cards need styling!!
-// 🧠 Users should be able to navigate back to the main page by clicking a button.
-//  1)  when click return home button, the home view should reappear and the hearts should disappear

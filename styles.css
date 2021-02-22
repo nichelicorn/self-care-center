@@ -1,4 +1,4 @@
-/* ⤵ APPLY TO ALL STYLES */
+/* ⤵ APPLY TO ALL STYLES 🌾 */
 * {
   font-family: 'Quicksand', sans-serif;
   margin: 0;
@@ -21,14 +21,14 @@ main {
   display: none;
 }
 
-/* ⤵ HOME PAGE STYLES */
+/* ⤵ HOME PAGE STYLES 🏡 */
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* ⤵ HEADERS */
+/* ⤵ HEADERS 💆‍♀️ */
 h1,
 h2 {
   text-align: center;
@@ -43,7 +43,7 @@ h2 {
   padding: 2.1em 2.1em .5em 2.1em;
 }
 
-/* ⤵ INPUT STYLES */
+/* ⤵ INPUT STYLES 📥 */
 .message-form,
 .form {
   display: flex;
@@ -88,7 +88,7 @@ ul {
   border: none;
 }
 
-/* ⤵ MESSAGE BOX STYLES */
+/* ⤵ MESSAGE BOX STYLES 💌 */
 .message-box {
   margin-top: 6.2em;
   display: flex;
@@ -142,7 +142,7 @@ ul {
   color: #fe77db;
 }
 
-/* ⤵ SAVED MESSAGE STYLES */
+/* ⤵ SAVED MESSAGE STYLES 💖 */
 .saved-wrapper {
   width: 95%;
 }
