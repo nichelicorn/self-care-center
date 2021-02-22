@@ -12,7 +12,7 @@ var savedAffirGallery = document.querySelector('#savedAffirGallery');
 var savedMantrasGallery = document.querySelector('#savedMantrasGallery');
 var savedMessagesSection = document.querySelector('#savedWrapper');
 
-// // ⤵ MESSAGE CLASS
+// // ⤵ MESSAGE CLASS - may attempt a future refactore to include a class; it seems this would require refactoring `deleteMessage()` to target the id in the object rather than the id in the DOM
 // class Message {
 //  constructor(message,) {
 //   message = userMessage.innerText;
@@ -65,76 +65,20 @@ savedMessagesSection.addEventListener('click', deleteMessage);
 
 // ⤵ FUNCTIONS
 function deleteMessage() {
-  var cardToDelete = event.target.closest('.card'); // this is the card closest to the click
-  // console.log('cardToDelete:', cardToDelete); // returns the `innerHTML` showing the <div> and its contents (the card constructed on makewhatevercards)
-  // console.log('id:', cardToDelete.id); // returns the id contained within the `innerHTML` that makes the card
+  var cardToDelete = event.target.closest('.card');
   var id = cardToDelete.id;
-  // console.log('sliced id:', id.slice(-1));
   var index = id.slice(-1);
-  console.log('index:', index); // this returns the index needed to splice from the array (will need to create an if statement to account for more than 9 items in the array; if array.lenth >= 10, id.slice(-2))
   var array = id.replace(index, "");
-  console.log('array:', array); // this logs the array name!!!!!
-
-
 
   if (array === 'savedAffirmations') {
     savedAffirmations.splice(index, 1);
   } else if (array === 'savedMantras') {
     savedMantras.splice(index, 1);
-  } // holy 💩...this is now deleting the clicked card from the correct array!!!!!!!!!!!!!!!!!
+  }
 
   makeAffirCards();
   makeMantraCards();
 }
-
-  // ✨ how do I extract the last character of the id? that is the index number that needs to be deleted from the array
-
-// if I change the id to match the array name, is it possible to separate the number from the name? then I could have an id savedMantras0, split savedMantras and 0 into their own variables, then plug them into a statement that would spice the number(0) from the  name (savedMantras)
-
-  // var list = [];
-  // var nodeList = list.push(document.querySelectorAll('.card'));
-  // console.log('list.push():', document.querySelectorAll('.card')) // returns the values of the NodeList and the index position within the list, as well as their descriptions
-  // does the NodeList contain the id? 🕵️‍♀️
-  // console.log('nodeList contains id?:', nodeList.contains(cardToDelete));
-  // ✨ the id is also in the NodeList, appears as `div#id.whatev-card.card,`
-  // need to push the values of the NodeList into an array to allow manipulation?
-  // console.log('list.length:', list.length);
-
-// figure out which item in the NodeList is being targeted on the click
-// where does this information appear?
-
-// find cardToDelete in the list and use that to update the DOM (?)
-
-  // if (card.classList.contains('mantra-card')) {
-    // savedMantras.splice(i, 1);
-  // } else if (card.classList.contains('affir-card')) {
-  // savedAffirmations.splice(i, 1);
-// }
-// }
-// if classList.contains(this kind of card affir-card or mantra-card) {
-// delete i (the index returned in the for loop) from the array that corresponds to the card type
-// }
-
-// WHAT ARE YOU TRYING TO DO?
-// the index is stated by referring the the id in the innerHTML - (cardToDelete.id)
-// the index can be used to indicate which item to delete (splice(i, 1))
-// ?? .contains will work, and so will .remove
-// if the card .contains the id, delete the card and rerun the makewhatever function
-
-// function removePoster() {
-//   var clickedPoster = event.target.closest('.mini-poster');
-//   for (var i = 0; i < savedPosters.length; i++) {
-//     if (savedPosters[i].id === parseInt(clickedPoster.id)) {
-//       savedPosters.splice(i, 1);
-//       displayGrid();
-//     }
-//   }
-// }
-
-// console.log('class:', cardToDelete.classList); // returns the classList of the card closest to the click
-// console.log('NodeList:', nodeList); //logs the length of the `list` array
-
-
 
 function displayMessage() {
   event.preventDefault(event);
