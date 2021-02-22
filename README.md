@@ -23,9 +23,11 @@
 - Individualize your programming skill set
 
 #### How does this work?
+
 ![selfCareClip3](https://user-images.githubusercontent.com/63027000/108650623-34c51f80-747d-11eb-92d2-4513bbf45dfd.gif)
 
 - This app works through a user interface with buttons. The user will select which type of message they would like to receive by selecting a radio button, then clicking the `Receive Message` button.
+
 ![selfCareClip4](https://user-images.githubusercontent.com/63027000/108650663-4c9ca380-747d-11eb-8f03-7a78bf8b26f7.gif)
 
 - The message will appear in the box below the interface, with a new set of buttons! These new buttons will allow the user to add favorite messages to the site.
