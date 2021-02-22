@@ -27,11 +27,11 @@
 ![selfCareClip3](https://user-images.githubusercontent.com/63027000/108650623-34c51f80-747d-11eb-92d2-4513bbf45dfd.gif)
 
 - This app works through a user interface with buttons. The user will select which type of message they would like to receive by selecting a radio button, then clicking the `Receive Message` button.
+- The message will appear in the box below the interface, with a new set of buttons! These new buttons will allow the user to add favorite messages to the site.
+- To see their favorites (the Hearts), the user will click the `Visit Your Hearts`, and be taken to a new view displaying their Heart messages
 
 ![selfCareClip4](https://user-images.githubusercontent.com/63027000/108650663-4c9ca380-747d-11eb-8f03-7a78bf8b26f7.gif)
 
-- The message will appear in the box below the interface, with a new set of buttons! These new buttons will allow the user to add favorite messages to the site.
-- To see their favorites (the Hearts), the user will click the `Visit Your Hearts`, and be taken to a new view displaying their Heart messages
 - On the Heart page, users can delete messages by clicking the `✂️` scissor button. The user can also return to the Home view by clicking `Return Home`
 - This page runs directly in the browser! 👩‍💻
 
