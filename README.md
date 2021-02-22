@@ -35,6 +35,6 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 
 - ISSUE: trying to target id elements to delete correct card...this took about half the day Sunday, but IT WORKS!!!!! I feel pretty proud of this solution, as I was able to create an ID that would allow me to manipulate the string value of the id and return the array and index needed to add a splice to the array...
 - It took a long time to get to this solution, because I wasn't really talking it out. I was logging a lot, but my logs weren't leading me down the correct path for a while. Eventually I noticed that I could simply create the id to be anything and changed it to match the names of the arrays.
-- I fully expected this to break when the array had more than 9 items, as my string method used a -1 to indicate the array position...but IT DOESN'T!! It continues working as expected, without an if statement to indicate the length of the array.
+- I fully expected this to break when the array had more than 9 items, as my string method used a -1 to indicate the array position...but IT DOESN'T!! It continues working as expected, without an if statement to indicate the length of the array. 
 
 - ISSUE: not really an issue, but tried refactoring CSS and it all went to shit! these things are particular, and I need more practice to get used to the way these rules interact with one another
